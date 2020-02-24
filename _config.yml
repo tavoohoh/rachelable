@@ -29,6 +29,7 @@ exclude:
   - gruntfile.js
   - node_modules/
   - package.json
+  - deploy.sh
 
 navigation_en:
   - section: Home
