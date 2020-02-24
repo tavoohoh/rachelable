@@ -1,0 +1,73 @@
+title: Rachelable
+description: >- # this means to ignore newlines until "baseurl:"
+  Hi, Im Rachel. Professional constantly developing with a responsible, 
+  punctual, organized and proactive personality.
+  Strive to achieve quality work, continually learning and contributing to
+  those around me.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "rachelable.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Social
+linkedin: https://www.linkedin.com/in/rachelmatam
+
+# Contact
+phone: "+573002384115"
+email: hi@rachelable.com
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compact
+
+exclude: 
+  - .sass
+  - README.md
+  - gruntfile.js
+  - node_modules/
+  - package.json
+
+navigation_en:
+  - section: Home
+    url: '/'
+    target: '_self'
+
+  - section: About
+    url: '/about'
+    target: '_self'
+
+  - section: Portfolio
+    url: '/portfolio'
+    target: '_self'
+
+  - section: Blog
+    url: '/blog'
+    target: '_self'
+
+  - section: Contact
+    url: '/contact'
+    target: '_self'
+
+navigation_es:
+  - section: Home
+    url: '/es'
+    target: '_self'
+
+  - section: Acerca de mi
+    url: '/about/es'
+    target: '_self'
+
+  - section: Portafolio
+    url: '/portfolio/es'
+    target: '_self'
+
+  - section: Blog
+    url: '/blog/es'
+    target: '_self'
+
+  - section: Contacto
+    url: '/contact/es'
+    target: '_self'

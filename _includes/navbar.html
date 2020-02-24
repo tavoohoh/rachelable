@@ -1,0 +1,11 @@
+{% assign navigation = site.navigation_en %}
+{% assign language = 'Español' %}
+
+{% if page.lang == 'es' %}
+  {% assign navigation = site.navigation_es %}
+  {% assign language = 'English' %}
+{% endif %}
+
+<nav>
+  navbar
+</nav>
