@@ -105,6 +105,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "rachelable"
+    }
+  },
+  "defaultProject": "rachelable",
+  "cli": {
+    "analytics": "17aaaec8-9e08-40f1-a45d-a77472f405db"
+  }
 }

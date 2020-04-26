@@ -14,7 +14,25 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    
+    "paths": {
+      "@comp/*": [
+        "src/app/components/*"
+      ],
+      "@cons/*": [
+        "src/app/constants/*"
+      ],
+      "@enum/*": [
+        "src/app/enums/*"
+      ],
+      "@page/*": [
+        "src/app/pages/*"
+      ],
+      "@serv/*": [
+        "src/app/services/*"
+      ]
+    },
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
