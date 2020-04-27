@@ -10,9 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
     </div>
     <ray-footer></ray-footer>
   `,
-  styles: [`
-    .page { min-height: calc(100vh - (83.7px + 58px)) }
-  `]
+  styles: []
 })
 export class AppComponent implements OnInit {
 

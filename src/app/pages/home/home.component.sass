@@ -1,0 +1,38 @@
+@import 'variables'
+
+.cover
+  padding: 0 6rem
+  position: relative
+  height: calc(80vh)
+  background: $violet
+
+  @media screen and ( max-width: 900px)
+    padding: 0 1.5rem
+
+  .subtitle,
+  .title
+    color: $white
+
+  .subtitle
+    position: absolute
+    bottom: 15vw
+    right: 50%
+
+    font-size: 5.5vw
+
+    @media screen and ( max-width: 900px)
+      bottom: 17vw
+
+  .title
+    position: absolute
+    bottom: 0
+
+    font-weight: 900
+    margin: 0
+    letter-spacing: -0.06em
+    font-size: calc((100vw - 12rem ) / (6 * 0.5) * 0.921)
+    line-height: 0.6
+    margin-left: -0.05em
+
+    @media screen and ( max-width: 900px)
+      font-size: calc((100vw - 3rem ) / (6 * 0.5) * 0.921)

@@ -1,7 +1,8 @@
 {
   "PAGES": {
     "HOME": {
-      "TITLE": "Home"
+      "TITLE": "Home",
+      "COVER_SUBTITLE": "Hi! I am"
     },
     "CONTACT": {
       "TITLE": "Contact"

@@ -1,7 +1,8 @@
 {
   "PAGES": {
     "HOME": {
-      "TITLE": "Inicio"
+      "TITLE": "Inicio",
+      "COVER_SUBTITLE": "¡Hola! Yo soy"
     },
     "CONTACT": {
       "TITLE": "Contacto"
