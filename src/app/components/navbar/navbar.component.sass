@@ -1,0 +1,53 @@
+@import 'variables'
+
+$logoSize: 48px
+
+nav
+  background: $violet
+  display: grid
+  grid-template-columns: $logoSize 1fr auto
+
+.navigation
+  display: flex
+  gap: 3rem
+
+  a
+    outline: none!important
+    font-size: 1em
+    align-self: center
+    text-transform: uppercase
+    color: $white
+    text-decoration: none
+    transition: $transition
+    font-weight: 700
+    text-underline-offset: 0.1em
+    text-decoration-thickness: 0.1em
+
+    &.link-active
+      text-decoration: underline
+      text-decoration-thickness: 0.1em
+      text-underline-offset: 0.3em
+
+    &:hover
+      text-decoration: underline
+      text-decoration-thickness: 0.1em
+      text-underline-offset: 0.3em
+
+#rayLogo
+  width: $logoSize
+  height: $logoSize
+
+  #background
+    fill: $white
+
+  #head,
+  #body
+    fill: $violet
+  
+  &.logo-inverted
+    #background
+      fill: $violet
+
+    #head,
+    #body
+      fill: $white

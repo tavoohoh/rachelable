@@ -1,0 +1,16 @@
+{
+  "PAGES": {
+    "HOME": {
+      "TITLE": "Inicio"
+    },
+    "CONTACT": {
+      "TITLE": "Contacto"
+    },
+    "ABOUT": {
+      "TITLE": "Acerca de mi"
+    }
+  },
+  "FOOTER": {
+    "CREDITS": "© Todos los derechos reservados. Hecho con &hearts; por"
+  }
+}

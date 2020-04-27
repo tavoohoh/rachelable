@@ -31,6 +31,9 @@
       ],
       "@serv/*": [
         "src/app/services/*"
+      ],
+      "@mode/*": [
+        "src/app/models/*"
       ]
     },
   },
