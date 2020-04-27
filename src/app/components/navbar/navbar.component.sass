@@ -5,49 +5,56 @@ $logoSize: 48px
 nav
   background: $violet
   display: grid
-  grid-template-columns: $logoSize 1fr auto
+  grid-template-columns: $logoSize 1fr auto 
 
-.navigation
-  display: flex
-  gap: 3rem
+  .navigation
+    display: flex
+    gap: 3rem
 
-  a
-    outline: none!important
-    font-size: 1em
-    align-self: center
-    text-transform: uppercase
-    color: $white
-    text-decoration: none
-    transition: $transition
-    font-weight: 700
-    text-underline-offset: 0.1em
-    text-decoration-thickness: 0.1em
-
-    &.link-active
-      text-decoration: underline
+    a
+      outline: none!important
+      font-size: 1em
+      align-self: center
+      text-transform: uppercase
+      color: $white
+      text-decoration: none
+      transition: $transition
+      font-weight: 700
+      text-underline-offset: 0.1em
       text-decoration-thickness: 0.1em
-      text-underline-offset: 0.3em
 
-    &:hover
-      text-decoration: underline
-      text-decoration-thickness: 0.1em
-      text-underline-offset: 0.3em
+      &.link-active
+        text-decoration: underline
+        text-decoration-thickness: 0.1em
+        text-underline-offset: 0.3em
 
-#rayLogo
-  width: $logoSize
-  height: $logoSize
+      &:hover
+        text-decoration: underline
+        text-decoration-thickness: 0.1em
+        text-underline-offset: 0.3em
 
-  #background
-    fill: $white
+  #rayLogo
+    width: $logoSize
+    height: $logoSize
 
-  #head,
-  #body
-    fill: $violet
-  
-  &.logo-inverted
-    #background
+    .ray-logo-background
+      fill: $white
+
+    .ray-logo-head,
+    .ray-logo-body
       fill: $violet
 
-    #head,
-    #body
-      fill: $white
+  &.inverted-colors
+    background: none
+
+    .navigation a
+      color: $violet
+    
+    #rayLogo
+      .ray-logo-background
+        fill: $violet
+
+      .ray-logo-head,
+      .ray-logo-body
+        fill: $white
+     
