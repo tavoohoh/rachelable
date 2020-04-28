@@ -11,8 +11,9 @@ nav
     display: flex
     gap: 3rem
 
-    a
+    a, button
       outline: none!important
+      cursor: pointer
       font-size: 1em
       align-self: center
       text-transform: uppercase
@@ -32,6 +33,17 @@ nav
         text-decoration: underline
         text-decoration-thickness: 0.1em
         text-underline-offset: 0.3em
+    
+    .language
+      display: grid
+      border-left: 2px solid $white
+      padding-left: 1rem
+
+      button
+        background: none
+        border: none
+        padding: none
+        margin: none
 
   #rayLogo
     width: $logoSize
@@ -47,8 +59,12 @@ nav
   &.inverted-colors
     background: none
 
-    .navigation a
-      color: $violet
+    .navigation
+      a, button
+        color: $violet
+
+      .language
+        border-color: $violet
     
     #rayLogo
       .ray-logo-background

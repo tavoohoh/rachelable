@@ -12,6 +12,11 @@
     <a *ngFor="let link of links" [routerLink]="link.path" routerLinkActive="link-active">
       {{ link.text | translate }}
     </a>
+    <span class="language">
+      <button (click)="toogleLang()">
+        {{ currentLanguage }}
+      </button>
+    </span>
   </div>
 </nav>
 

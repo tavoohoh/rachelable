@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationArrayModel } from '@mode/index';
 import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ray-navbar',
@@ -9,6 +10,7 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   public invertedColors: boolean;
+  public currentLanguage: string;
   public links: NavigationArrayModel = [
     {
       path: '/home',
@@ -24,9 +26,13 @@ export class NavbarComponent implements OnInit {
     }
   ];
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private translateService: TranslateService
+  ) { }
 
   ngOnInit(): void {
+    this.currentLanguage = this.translateService.currentLang;
     this.invertedColors = this.setLayout(this.router.url.split('/').reverse()[0]);
 
     this.router.events.subscribe((navigateEvent: any) => {
@@ -42,6 +48,12 @@ export class NavbarComponent implements OnInit {
     }
 
     this.invertedColors = false;
+  }
+
+  public toogleLang() {
+    this.translateService.use(this.currentLanguage === 'en' ? 'es' : 'en').subscribe(() =>
+      this.currentLanguage = this.translateService.currentLang
+    );
   }
 
 }

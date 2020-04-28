@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HomeDB } from '@app/db';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'ray-home',
@@ -6,9 +8,17 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-  constructor() { }
+  public pageContext = HomeDB;
+  public lang: string;
+
+  constructor(
+    private translateService: TranslateService
+  ) { }
 
   ngOnInit(): void {
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      
+    });
   }
 
 }
