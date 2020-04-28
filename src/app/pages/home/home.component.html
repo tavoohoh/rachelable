@@ -7,4 +7,23 @@
   </h1>
 </div>
 
-<div style="height: 400px;"></div>
+<ng-container *ngIf="pageContext && lang">
+  <div class="presentation">
+    <h3>
+      {{ pageContext.presentation.title[lang] }}
+    </h3>
+    <p>
+      {{ pageContext.presentation.content[lang] }}
+    </p>
+  </div>
+  
+  <div class="call-to-action">
+    <strong>
+      {{ pageContext.callToAction.content[lang] }}
+    </strong>
+    <button>
+      {{ pageContext.callToAction.buttonText[lang] }}
+    </button>
+  </div>
+
+</ng-container>

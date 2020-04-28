@@ -1,6 +1,6 @@
 export interface TranslatedValueModel {
-  ES: string;
-  EN: string;
+  es: string;
+  en: string;
 }
 
 export interface CallToActionModel {
