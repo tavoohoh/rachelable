@@ -220,6 +220,7 @@ textarea
 html,
 body
   font-family: 'Poppins', Arial, Helvetica, sans-serif
+  color: $black
 
 h1,
 h2,
@@ -260,7 +261,7 @@ h3
   font-size: 1em
   text-transform: uppercase
   font-weight: 700
-  border-radius: 1.2em
+  border-radius: 1.4em
 
   &:hover, &:active, &:focus
     background-color: darken($violet, 5)
@@ -270,3 +271,14 @@ h3
 
 .shadow-shawer-text
   @include shadowShowerText()
+
+/* content */
+.content-block
+  margin: 3rem 0 0
+
+  h3
+    font-size: 4em
+
+  p
+    line-height: 1.5
+    font-size: 1.4em
