@@ -17,13 +17,9 @@
     </p>
   </div>
   
-  <div class="call-to-action">
-    <strong>
-      {{ pageContext.callToAction.content[lang] }}
-    </strong>
-    <button>
-      {{ pageContext.callToAction.buttonText[lang] }}
-    </button>
-  </div>
+  <ray-call-to-action
+    [content]="pageContext.callToAction.content[lang]"
+    [button]="callToActionAbout">
+  </ray-call-to-action>
 
 </ng-container>

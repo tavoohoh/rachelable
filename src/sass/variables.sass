@@ -1,10 +1,38 @@
 /* colors */
 $violet: #3b378e
-$violet-var: #4a46a4
+$violet-var: #5d4da8
 $dark-blue: #030c1b
 $black: #030b1b
 $light-gray: #cdcdcd
 $white: #ffffff
+
+@mixin cleanButton()
+  text-decoration: none
+  outline: none
+  border: none
+  cursor: pointer
+  line-height: 1
+
+@mixin violetGradient()
+  background-color: $violet
+  background: linear-gradient(286deg, $violet 30%, $violet-var 100%)
+
+@mixin violetVarGradient()
+  background-color: darken($violet, 5)
+  background: linear-gradient(286deg, darken($violet, 10) 30%, darken($violet-var, 10) 100%)
+
+@mixin transition()
+  -webkit-transition: 0.3s ease-in-out
+  -moz-transition: 0.3s ease-in-out
+  -o-transition: 0.3s ease-in-out
+  transition: 0.3s ease-in-out
+
+@mixin shadowShower()
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.1)
+  
+@mixin shadowShowerText()
+  text-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.2)
+  
 
 /* effects */
 $transition: 0.3s ease-in-out

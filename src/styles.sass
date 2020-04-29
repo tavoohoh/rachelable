@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap'
+@import 'variables'
 
 /*! normalize */
 
@@ -246,3 +247,26 @@ h3
 
 .container
   padding: 1rem 6rem
+
+/* buttons */
+.ray-btn
+  @include cleanButton()
+  @include transition()
+  width: max-content
+  background-color: $violet
+  padding: 1rem 3rem
+  text-align: center
+  color: $white
+  font-size: 1em
+  text-transform: uppercase
+  font-weight: 700
+  border-radius: 1.2em
+
+  &:hover, &:active, &:focus
+    background-color: darken($violet, 5)
+
+.shadow-shawer
+  @include shadowShower()
+
+.shadow-shawer-text
+  @include shadowShowerText()
