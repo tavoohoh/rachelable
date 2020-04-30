@@ -1,19 +1,23 @@
-<div class="carousel" *ngIf="carousel && lang">
-  <div class="carousel-card" *ngFor="let card of carousel">
-    <div class="carousel-image"></div>
+<div class="carousel container" *ngIf="carousel && lang">
+  <div class="carousel-card">
+    <div class="carousel-image" [style.background-image]="'url(' + data[carouselIndex].image + ')'"></div>
     <div class="carousel-content">
-      {{ card.content[lang] }}
+      {{ data[carouselIndex].content[lang] }}
     </div>
     <div class="carousel-person">
       <b>
-        {{ card.person }}
+        {{ data[carouselIndex].person }}
       </b>
-      {{ card.title[lang] }}
+      {{ data[carouselIndex].title[lang] }}
     </div>
   </div>
 
-  <div class="carousel-actions">
-    <div (click)="carouselNavigation(true)">previous</div>
-    <div (click)="carouselNavigation()">next</div>
+  <div class="carousel-bullets">
+    <span
+      *ngFor="let bullet of data; let i = index"
+      class="shadow-shawer"
+      [class.corousel-bullet-active]="i === carouselIndex"
+      (click)="carouselIndex = i">
+    </span>
   </div>
 </div>
