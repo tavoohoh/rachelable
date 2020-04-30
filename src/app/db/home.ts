@@ -23,7 +23,7 @@ export const HomeDB: HomeDbModel = {
   },
   testimonials: [
     {
-      image: '',
+      image: './assets/images/logo.png',
       person: 'Mariangelina Socorro Patiño',
       title: {
         en: 'Lawyer at Banco Venezolano de Crédito',
@@ -35,7 +35,7 @@ export const HomeDB: HomeDbModel = {
       }
     },
     {
-      image: '',
+      image: './assets/images/logo.png',
       person: 'Jean Lagarde Neu',
       title: {
         en: 'Bilingual Administrative Assistant',
@@ -47,7 +47,7 @@ export const HomeDB: HomeDbModel = {
       }
     },
     {
-      image: '',
+      image: './assets/images/logo.png',
       person: 'Yasir Patel',
       title: {
         en: 'Head of School at The British School Caracas',
@@ -59,7 +59,7 @@ export const HomeDB: HomeDbModel = {
       }
     },
     {
-      image: '',
+      image: './assets/images/logo.png',
       person: 'Bob 4',
       title: {
         en: 'Head of School at The British School Caracas',
@@ -71,7 +71,7 @@ export const HomeDB: HomeDbModel = {
       }
     },
     {
-      image: '',
+      image: './assets/images/logo.png',
       person: 'Bob 5',
       title: {
         en: 'Head of School at The British School Caracas',

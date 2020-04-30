@@ -15,6 +15,8 @@ export class CarouselComponent implements OnChanges {
   public carousel: CarouselModel;
   public carouselIndex = 0;
 
+  private changePageInterval: any;
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes) {
       if (changes && changes.data) {
@@ -26,34 +28,35 @@ export class CarouselComponent implements OnChanges {
       }
 
       if (this.data && this.lang) {
-        this.carousel = this.setCarouselData();
+        this.initInterval();
       } else {
         console.warn('Carousel: Make sure data and lang are defined');
       }
     }
   }
 
-  private setCarouselData(previous = false): CarouselModel {
-    const data: Array<TestimonialModel> = this.data;
-    const dataLength = data.length - 1;
+  public animateCarousel(page?: string) {
+    if (page) {
+      this.carouselIndex = Number(page);
+    }
 
-    const index = previous ? (this.carouselIndex - 1 >= 0 ? this.carouselIndex - 1 : 0) : this.carouselIndex + 1;
-    const operatorIndex = index > dataLength ? 0 : index;
-    const indexMinusOne = (operatorIndex - 1) >= 0 && (operatorIndex - 1) <= dataLength ? operatorIndex - 1 : dataLength;
-    const indexPlusOne = (operatorIndex + 1) > dataLength ? 0 : operatorIndex + 1;
-
-    let carousel: CarouselModel = [
-      data[indexMinusOne],
-      data[operatorIndex],
-      data[indexPlusOne]
-    ];
-
-    this.carouselIndex = operatorIndex;
-
-    return carousel;
+    this.initInterval();
   }
 
-  public carouselNavigation(previous = false): void {
-    this.carousel = this.setCarouselData(previous);
+  private initInterval() {
+    clearInterval(this.changePageInterval);
+
+    this.changePageInterval = setInterval(() => {
+      this.changeCarouselPage();
+    }, 2000);
   }
+
+  private changeCarouselPage() {
+    if (this.carouselIndex + 1 >= this.data.length) {
+      this.carouselIndex = 0;
+    } else {
+      this.carouselIndex = this.carouselIndex + 1;
+    }
+  }
+
 }

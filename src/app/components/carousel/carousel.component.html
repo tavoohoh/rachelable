@@ -1,14 +1,12 @@
-<div class="carousel container" *ngIf="carousel && lang">
+<div class="carousel container" *ngIf="data && lang">
   <div class="carousel-card">
     <div class="carousel-image" [style.background-image]="'url(' + data[carouselIndex].image + ')'"></div>
     <div class="carousel-content">
       {{ data[carouselIndex].content[lang] }}
-    </div>
-    <div class="carousel-person">
-      <b>
-        {{ data[carouselIndex].person }}
-      </b>
-      {{ data[carouselIndex].title[lang] }}
+
+      <div class="carousel-person">
+        <b>{{ data[carouselIndex].person }}</b>, {{ data[carouselIndex].title[lang] }}
+      </div>
     </div>
   </div>
 
@@ -17,7 +15,7 @@
       *ngFor="let bullet of data; let i = index"
       class="shadow-shawer"
       [class.corousel-bullet-active]="i === carouselIndex"
-      (click)="carouselIndex = i">
+      (click)="animateCarousel(i.toString())">
     </span>
   </div>
 </div>
