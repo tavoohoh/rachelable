@@ -1,0 +1,19 @@
+<div class="carousel" *ngIf="carousel && lang">
+  <div class="carousel-card" *ngFor="let card of carousel">
+    <div class="carousel-image"></div>
+    <div class="carousel-content">
+      {{ card.content[lang] }}
+    </div>
+    <div class="carousel-person">
+      <b>
+        {{ card.person }}
+      </b>
+      {{ card.title[lang] }}
+    </div>
+  </div>
+
+  <div class="carousel-actions">
+    <div (click)="carouselNavigation(true)">previous</div>
+    <div (click)="carouselNavigation()">next</div>
+  </div>
+</div>

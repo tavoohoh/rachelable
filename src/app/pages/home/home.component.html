@@ -1,8 +1,8 @@
 <div class="cover">
-  <div class="subtitle">
+  <div class="subtitle no-select">
     {{ 'PAGES.HOME.COVER_SUBTITLE' | translate }}
   </div>
-  <h1 class="title">
+  <h1 class="title no-select">
     Rachel
   </h1>
 </div>
@@ -21,5 +21,10 @@
     [content]="pageContext.callToAction.content[lang]"
     [button]="callToActionAbout">
   </ray-call-to-action>
+
+  <ray-carousel
+    [data]="pageContext.testimonials"
+    [lang]="lang">
+  </ray-carousel>
 
 </ng-container>

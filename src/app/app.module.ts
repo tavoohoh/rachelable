@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from '@comp/navbar/navbar.component';
 import { FooterComponent } from '@comp/footer/footer.component';
 import { CallToActionComponent } from '@comp/call-to-action/call-to-action.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 import { HomeComponent } from '@page/home/home.component';
 import { ContactComponent } from '@page/contact/contact.component';
 import { AboutComponent } from '@page/about/about.component';
@@ -48,6 +49,7 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent,
     CallToActionComponent,
+    CarouselComponent,
     HomeComponent,
     ContactComponent,
     AboutComponent

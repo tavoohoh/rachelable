@@ -15,11 +15,11 @@ export class CallToActionComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes) {
-      if (changes.content.currentValue) {
+      if (changes.content) {
         this.content = changes.content.currentValue;
       }
 
-      if (changes.button.currentValue) {
+      if (changes.button) {
         this.button = changes.button.currentValue;
       }
     } 
