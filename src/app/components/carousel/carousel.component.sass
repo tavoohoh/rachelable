@@ -1,10 +1,19 @@
 @import 'variables'
 
 .carousel
-  padding-top: 3rem
-  padding-bottom: 3rem
+  position: relative
+  display: grid
+  overflow: hidden
+  min-height: 400px
+  grid-auto-rows: 1fr 10px 60px
+  gap: 1rem
 
   .carousel-card
+    align-self: center
+    position: relative
+    right: 0
+    transition-timing-function: ease-in-out
+
     padding: 2rem
     border-radius: 2em
     background-color: $light-gray
@@ -31,13 +40,19 @@
         margin-top: 1rem
         font-size: 0.9em
 
+  .carousel-messages
+    text-align: center
+    color: darken($light-gray, 40)
+    font-size: 0.7em
+
   .carousel-bullets
+    align-self: start
     display: block
     display: flex
     gap: 0.5rem
 
     width: max-content
-    margin: 2rem auto
+    margin: 0 auto
 
     span
       cursor: pointer

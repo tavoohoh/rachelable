@@ -13,5 +13,8 @@
   },
   "FOOTER": {
     "CREDITS": "© All Right Reserved. Made with &hearts; by"
+  },
+  "CAROUSEL": {
+    "HOVER": "Toggle animation, put/remove finger or mouse over the card"
   }
 }

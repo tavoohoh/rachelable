@@ -13,5 +13,8 @@
   },
   "FOOTER": {
     "CREDITS": "© Todos los derechos reservados. Hecho con &hearts; por"
+  },
+  "CAROUSEL": {
+    "HOVER": "Alternarna la animación, ponga/quite el dedo o mouse de la tarjeta"
   }
 }

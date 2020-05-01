@@ -57,30 +57,6 @@ export const HomeDB: HomeDbModel = {
         en: 'I have known Rachel Mata for 3 years.  She is an enthusiastic and self-motivated individual who will complete all tasks as required, and more. Rachel often goes the extra mile and offers creative solutions when she sees possible improvements. I recommend Rachel to future employers - she has a bright future and will be an asset to anybody.',
         es: 'Conozco a Rachel Mata desde hace 3 años. Es una persona entusiasta y motivada que completará todas las tareas según sea necesario y más. Rachel a menudo hace un esfuerzo adicional y ofrece soluciones creativas cuando ve posibles mejoras. Recomiendo a Rachel a futuros empleadores: tiene un futuro brillante y será una ventaja para cualquiera.'
       }
-    },
-    {
-      image: './assets/images/logo.png',
-      person: 'Bob 4',
-      title: {
-        en: 'Head of School at The British School Caracas',
-        es: 'Director en The British School Caracas'
-      },
-      content: {
-        en: 'I have known Rachel Mata for 3 years.  She is an enthusiastic and self-motivated individual who will complete all tasks as required, and more. Rachel often goes the extra mile and offers creative solutions when she sees possible improvements. I recommend Rachel to future employers - she has a bright future and will be an asset to anybody.',
-        es: 'Conozco a Rachel Mata desde hace 3 años. Es una persona entusiasta y motivada que completará todas las tareas según sea necesario y más. Rachel a menudo hace un esfuerzo adicional y ofrece soluciones creativas cuando ve posibles mejoras. Recomiendo a Rachel a futuros empleadores: tiene un futuro brillante y será una ventaja para cualquiera.'
-      }
-    },
-    {
-      image: './assets/images/logo.png',
-      person: 'Bob 5',
-      title: {
-        en: 'Head of School at The British School Caracas',
-        es: 'Director en The British School Caracas'
-      },
-      content: {
-        en: 'I have known Rachel Mata for 3 years.  She is an enthusiastic and self-motivated individual who will complete all tasks as required, and more. Rachel often goes the extra mile and offers creative solutions when she sees possible improvements. I recommend Rachel to future employers - she has a bright future and will be an asset to anybody.',
-        es: 'Conozco a Rachel Mata desde hace 3 años. Es una persona entusiasta y motivada que completará todas las tareas según sea necesario y más. Rachel a menudo hace un esfuerzo adicional y ofrece soluciones creativas cuando ve posibles mejoras. Recomiendo a Rachel a futuros empleadores: tiene un futuro brillante y será una ventaja para cualquiera.'
-      }
     }
   ]
 };
