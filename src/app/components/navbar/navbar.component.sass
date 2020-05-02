@@ -1,20 +1,19 @@
 @import 'variables'
 
-$logoSize: 48px
+nav  
+  $logoSize: 48px
 
-nav
   background: $violet
   display: grid
-  grid-template-columns: $logoSize 1fr auto 
+  grid-template-columns: $logoSize 1fr auto
 
   .navigation
     display: flex
-    gap: 3rem
 
     a, button
       outline: none!important
       cursor: pointer
-      font-size: 1em
+      @include fontParagraph()
       align-self: center
       text-transform: uppercase
       color: $white
@@ -45,6 +44,12 @@ nav
         padding: none
         margin: none
 
+  .navigation > *
+    margin-right: 2rem
+
+    &:last-child
+      margin: 0
+
   #rayLogo
     width: $logoSize
     height: $logoSize
@@ -74,3 +79,21 @@ nav
       .ray-logo-body
         fill: $white
      
+  @media screen and (max-width: $sma)
+    $logoSize: 30px
+
+    grid-template-columns: $logoSize 1fr auto
+
+    .navigation
+      a, button
+        @include fontParagraph()
+
+      .language
+        padding-left: 0rem
+
+    .navigation > *
+      margin-right: 1rem
+    
+    #rayLogo
+      width: $logoSize
+      height: $logoSize
