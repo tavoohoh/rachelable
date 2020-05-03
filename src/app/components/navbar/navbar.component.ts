@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./navbar.component.sass']
 })
 export class NavbarComponent implements OnInit {
+  public openMenu: boolean;
   public invertedColors: boolean;
   public currentLanguage: string;
   public links: NavigationArrayModel = [
@@ -34,12 +35,15 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.currentLanguage = this.translateService.currentLang;
     this.invertedColors = this.setLayout(this.router.url.split('/').reverse()[0]);
-
     this.router.events.subscribe((navigateEvent: any) => {
       if (navigateEvent instanceof NavigationEnd) {
         this.invertedColors = this.setLayout(navigateEvent.url.split('/').reverse()[0]);
       }
     });
+  }
+
+  public toggleMenu(): void {
+    this.openMenu = !this.openMenu;
   }
 
   private setLayout(currentUrl: string): boolean {
@@ -51,6 +55,7 @@ export class NavbarComponent implements OnInit {
   }
 
   public toogleLang() {
+    this.toggleMenu();
     this.translateService.use(this.currentLanguage === 'en' ? 'es' : 'en').subscribe(() =>
       this.currentLanguage = this.translateService.currentLang
     );

@@ -10,6 +10,10 @@ nav
   background: transparent
   width: 100%
 
+  .navigation-menu
+    fill: $white
+    @include cleanButton()
+
   .navigation
     display: flex
 
@@ -46,6 +50,29 @@ nav
         border: none
         padding: none
         margin: none
+    
+    @media screen and (max-width: $med)
+      display: none
+      position: fixed
+      top: 0
+      right: 0
+      padding: 30vh 3rem 0
+      width: 100vw
+      height: 100vh
+      background-color: rgba(0, 0, 0, 0.7)
+
+      flex-direction: column
+
+      a
+        margin-right: 0
+        margin-bottom: 2rem
+
+      a, button
+        @include fontBig()
+
+      .language
+        border: none
+        padding: 0
 
   .navigation > *
     margin-right: 2rem
@@ -81,22 +108,6 @@ nav
       .ray-logo-head,
       .ray-logo-body
         fill: $white
-     
-  @media screen and (max-width: $sma)
-    $logoSize: 30px
 
-    grid-template-columns: $logoSize 1fr auto
-
-    .navigation
-      a, button
-        @include fontParagraph()
-
-      .language
-        padding-left: 0rem
-
-    .navigation > *
-      margin-right: 1rem
-    
-    #rayLogo
-      width: $logoSize
-      height: $logoSize
+.show
+  display: flex!important
