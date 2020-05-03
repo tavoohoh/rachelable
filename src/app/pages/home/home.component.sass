@@ -3,17 +3,22 @@
 .cover
   padding: 0 6rem
   position: relative
-  height: calc(80vh)
-  background: $violet
+  height: 100vh
+  background-color: $violet
+  background-image: url('../../../assets/images/ray.png')
+  background-position-x: 12vw
+  background-position-y: bottom
+  background-size: contain
+  background-repeat: no-repeat
 
-  @media screen and ( max-width: 900px)
+  @media screen and ( max-width: $med)
     padding: 0 1.5rem
 
-  .subtitle,
-  .title
+  .cover-subtitle,
+  .cover-title
     color: $white
 
-  .subtitle
+  .cover-subtitle
     position: absolute
     bottom: 15vw
     right: 50%
@@ -23,15 +28,25 @@
     @media screen and ( max-width: 900px)
       bottom: 17vw
 
-  .title
+  .cover-title
     position: absolute
-    bottom: -7vw
-
-    font-weight: 900
-    margin: 0
-    letter-spacing: -0.06em
-    font-size: calc((100vw - 12rem ) / (6 * 0.5) * 0.921)
+    bottom: 0
+    height: 18vw
+    overflow: hidden
     margin-left: -0.05em
 
-    @media screen and ( max-width: 900px)
-      font-size: calc((100vw - 3rem ) / (6 * 0.5) * 0.921)
+    h1
+      position: relative
+      top: -5vw
+      margin: 0
+      font-weight: 900
+      letter-spacing: -0.06em
+      font-size: calc((100vw - 12rem ) / (6 * 0.5) * 0.921)
+
+    @media screen and ( max-width: 1000px)
+      height: 17vw
+      
+    @media screen and ( max-width: $med)
+      height: 21vw
+      h1
+        font-size: calc((100vw - 3rem ) / (6 * 0.5) * 0.921)

@@ -226,6 +226,9 @@ body
     background-color: $violet-var
     color: $white
 
+*
+  box-sizing: border-box
+
 h1,
 h2,
 h3,
@@ -252,6 +255,12 @@ h3
 
 .condensed
   letter-spacing: -0.3em
+
+.page
+  min-height: calc(100vh - 58px)
+
+  .content
+    padding-top: 115px
 
 .container
   padding: 2rem 6rem

@@ -1,30 +1,34 @@
-<div class="cover">
-  <div class="subtitle no-select">
-    {{ 'PAGES.HOME.COVER_SUBTITLE' | translate }}
-  </div>
-  <h1 class="title no-select">
-    Rachel
-  </h1>
-</div>
-
-<ng-container *ngIf="pageContext && lang">
-  <div class="content-block container">
-    <h3 class="title">
-      {{ pageContext.presentation.title[lang] }}
-    </h3>
-    <p>
-      {{ pageContext.presentation.content[lang] }}
-    </p>
+<div class="page">
+  <div class="cover">
+    <div class="cover-subtitle no-select">
+      {{ 'PAGES.HOME.COVER_SUBTITLE' | translate }}
+    </div>
+    <div class="cover-title">
+      <h1 class="no-select">
+        Rachel
+      </h1>
+    </div>
   </div>
   
-  <ray-call-to-action
-    [content]="pageContext.callToAction.content[lang]"
-    [button]="callToActionAbout">
-  </ray-call-to-action>
-
-  <ray-carousel
-    [data]="pageContext.testimonials"
-    [lang]="lang">
-  </ray-carousel>
-
-</ng-container>
+  <ng-container *ngIf="pageContext && lang">
+    <div class="content-block container">
+      <h3 class="title">
+        {{ pageContext.presentation.title[lang] }}
+      </h3>
+      <p>
+        {{ pageContext.presentation.content[lang] }}
+      </p>
+    </div>
+    
+    <ray-call-to-action
+      [content]="pageContext.callToAction.content[lang]"
+      [button]="callToActionAbout">
+    </ray-call-to-action>
+  
+    <ray-carousel
+      [data]="pageContext.testimonials"
+      [lang]="lang">
+    </ray-carousel>
+  
+  </ng-container>
+</div>

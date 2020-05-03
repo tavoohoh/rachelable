@@ -35,7 +35,7 @@ export const HomeDB: HomeDbModel = {
       }
     },
     {
-      image: './assets/testimonials/we2.jpeg',
+      image: './assets/testimonials/we2.jpg',
       person: 'Jean Lagarde Neu',
       title: {
         en: 'Bilingual Administrative Assistant',
@@ -47,7 +47,7 @@ export const HomeDB: HomeDbModel = {
       }
     },
     {
-      image: './assets/testimonials/de3.jpeg',
+      image: './assets/testimonials/de3.jpg',
       person: 'Yasir Patel',
       title: {
         en: 'Head of School at The British School Caracas',
