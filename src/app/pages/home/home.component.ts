@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GenericComponent } from '@page/generic/generic.component';
 import { HomeDB } from '@app/db';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ButtonType } from '@app/enums';
 
 @Component({
@@ -8,29 +8,16 @@ import { ButtonType } from '@app/enums';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.sass']
 })
-export class HomeComponent implements OnInit {
-  public pageContext = HomeDB;
-  public lang: string;
-  public callToActionAbout = {
-    text: '',
-    action: '/about-me',
-    type: ButtonType.LINK
-  };
-
-  constructor(
-    private translateService: TranslateService
-  ) { }
-
+export class HomeComponent extends GenericComponent implements OnInit {
+  
   ngOnInit(): void {
-    this.setContext(this.translateService.currentLang);
-    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.setContext(event.lang);
-    });
-  }
-
-  private setContext(lang: string): void {
-    this.lang = lang;
-    this.callToActionAbout.text = this.pageContext.callToAction.buttonText[this.lang];
+    this.pageContext = HomeDB;
+    const callToActionConfig = {
+      text: '',
+      action: '/about-me',
+      type: ButtonType.LINK
+    };
+    this.pageOnInit(callToActionConfig);
   }
 
 }

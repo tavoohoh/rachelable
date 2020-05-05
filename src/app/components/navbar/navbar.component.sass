@@ -11,8 +11,12 @@ nav
   width: 100%
 
   .navigation-menu
+    display: none
     fill: $white
     @include cleanButton()
+
+    @media screen and (max-width: $med)
+      display: block
 
   .navigation
     display: flex
@@ -59,7 +63,7 @@ nav
       padding: 30vh 3rem 0
       width: 100vw
       height: 100vh
-      background-color: rgba(0, 0, 0, 0.7)
+      background-color: rgba(0, 0, 0, 0.8)
 
       flex-direction: column
 

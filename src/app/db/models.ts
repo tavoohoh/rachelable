@@ -1,27 +1,49 @@
-export interface TranslatedValueModel {
-  es: string;
-  en: string;
+export interface ParagraphModel {
+  es: string | Array<string>;
+  en: string | Array<string>;
 }
 
 export interface CallToActionModel {
-  content: TranslatedValueModel;
-  buttonText: TranslatedValueModel;
+  content: ParagraphModel;
+  buttonText: ParagraphModel;
 };
 
 export interface PresentationModel {
-  title: TranslatedValueModel;
-  content: TranslatedValueModel;
+  title: ParagraphModel;
+  content: ParagraphModel;
 }
 
 export interface TestimonialModel {
   image: string;
   person: string;
-  title: TranslatedValueModel;
-  content: TranslatedValueModel;
+  title: ParagraphModel;
+  content: ParagraphModel;
+}
+
+
+export interface educationModel {
+  logo: string;
+  course: ParagraphModel;
+  institution: string;
+  year: number;
+  tags?: {
+    es: Array<string>;
+    en: Array<string>;
+  };
 }
 
 export interface HomeDbModel {
   presentation: PresentationModel;
   callToAction: CallToActionModel;
   testimonials: Array<TestimonialModel>;
+}
+
+export interface AboutModel {
+  presentation: PresentationModel;
+  callToAction: CallToActionModel;
+  education: Array<educationModel>;
+}
+
+export interface ContactModel {
+  presentation: PresentationModel;
 }
