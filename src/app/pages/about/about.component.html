@@ -1,6 +1,6 @@
 <div class="page cover">
   <div class="content">
-    <div class="cover container content-block">
+    <div class="container content-block">
       <h2 class="title">
         {{ pageContext.presentation.title[lang] }}
       </h2>
@@ -16,17 +16,22 @@
     <h2 class="title">
       {{ pageContext.education.title[lang] }}
     </h2>
-    <div class="card" *ngFor="let course of pageContext.education.courses">
-      <span class="image"></span>
-      <span>{{ course.course[lang] }}</span>
-      <span>{{ course.institution }}</span>
-      <span>{{ course.year }}</span>
-
-      <ng-container *ngIf="course.tags">
-        <div *ngFor="let tag of course.tags[lang]">
-          <span>{{ tag }}</span>
+    <div class="education">
+      <div class="card" *ngFor="let course of pageContext.education.courses">
+        <span class="card-logo" [style.background-image]="'url(' + course.logo + ')'"></span>
+        <div class="card-content">
+          <span class="card-title">{{ course.course[lang] }}</span>
+          <span class="card-subtitle">
+            {{ course.institution }}, {{ course.year }}
+          </span>
+    
+          <div class="card-tags" *ngIf="course.tags">
+            <span *ngFor="let tag of course.tags[lang]">
+              {{ tag }}
+            </span>
+          </div>
         </div>
-      </ng-container>
+      </div>
     </div>
   </div>
 </div>

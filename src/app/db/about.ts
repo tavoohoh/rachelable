@@ -43,10 +43,10 @@ export const AboutDB: AboutModel = {
         year: 2021,
         tags: {
           en: [
-            '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
+            '#Management', '#Planning', '#Administration'
           ],
           es: [
-            '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
+            '#Gestión', '#Planificación', '#Administración'
           ]
         }
       },
@@ -60,27 +60,10 @@ export const AboutDB: AboutModel = {
         year: 2021,
         tags: {
           en: [
-            '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
+            '#Administration', '#HumanResources', '#Finances'
           ],
           es: [
-            '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
-          ]
-        }
-      },
-      {
-        logo: './assets/education/iseb.jpg',
-        course: {
-          en: 'Master in Project Management',
-          es: 'Master en gestión de proyectos'
-        },
-        institution: 'Instituto Superior Europeo de Barcelona',
-        year: 2021,
-        tags: {
-          en: [
-            '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
-          ],
-          es: [
-            '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
+            '#Administración', '#RecursosHumanos', '#Finanzas'
           ]
         }
       },
