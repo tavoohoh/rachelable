@@ -27,101 +27,107 @@ export const AboutDB: AboutModel = {
       es: 'Contactame'
     },
   },
-  education: [
-    {
-      logo: './assets/education/iseb.jpg',
-      course: {
-        en: 'Master in Business Administration',
-        es: 'Maestría en Administración de Negocios'
+  education: {
+    title: {
+      en: 'Education and courses',
+      es: 'Educación y cursos'
+    },
+    courses: [
+      {
+        logo: './assets/education/iseb.jpg',
+        course: {
+          en: 'Master in Business Administration',
+          es: 'Maestría en Administración de Negocios'
+        },
+        institution: 'Instituto Superior Europeo de Barcelona',
+        year: 2021,
+        tags: {
+          en: [
+            '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
+          ],
+          es: [
+            '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
+          ]
+        }
       },
-      institution: 'Instituto Superior Europeo de Barcelona',
-      year: 2021,
-      tags: {
-        en: [
-          '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
-        ],
-        es: [
-          '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
-        ]
+      {
+        logo: './assets/education/iseb.jpg',
+        course: {
+          en: 'Master in Project Management',
+          es: 'Master en gestión de proyectos'
+        },
+        institution: 'Instituto Superior Europeo de Barcelona',
+        year: 2021,
+        tags: {
+          en: [
+            '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
+          ],
+          es: [
+            '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
+          ]
+        }
+      },
+      {
+        logo: './assets/education/iseb.jpg',
+        course: {
+          en: 'Master in Project Management',
+          es: 'Master en gestión de proyectos'
+        },
+        institution: 'Instituto Superior Europeo de Barcelona',
+        year: 2021,
+        tags: {
+          en: [
+            '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
+          ],
+          es: [
+            '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
+          ]
+        }
+      },
+      {
+        logo: './assets/education/ef.jpg',
+        course: {
+          en: 'English C2 Proficient',
+          es: 'Inglés Proficient C2'
+        },
+        institution: 'EF Education First',
+        year: 2020
+      },
+      {
+        logo: './assets/education/coursera.jpg',
+        course: {
+          en: 'Teach English Now! Foundational Principles',
+          es: '¡Enseña inglés ahora! Principios Fundacionales'
+        },
+        institution: 'Coursera',
+        year: 2018
+      },
+      {
+        logo: './assets/education/coursera.jpg',
+        course: {
+          en: 'Project Management: The basis of success',
+          es: 'Gestión de proyectos: la base del éxito'
+        },
+        institution: 'Coursera',
+        year: 2018
+      },
+      {
+        logo: './assets/education/ucv.png',
+        course: {
+          en: 'Modern languages, translator and interpreter',
+          es: 'Lenguas modernas, traductor e intérprete'
+        },
+        institution: 'Universidad Central de Venezuela',
+        year: 2014,
+        tags: {
+          en: [
+            '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
+          ],
+          es: [
+            '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
+          ]
+        }
       }
-    },
-    {
-      logo: './assets/education/iseb.jpg',
-      course: {
-        en: 'Master in Project Management',
-        es: 'Master en gestión de proyectos'
-      },
-      institution: 'Instituto Superior Europeo de Barcelona',
-      year: 2021,
-      tags: {
-        en: [
-          '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
-        ],
-        es: [
-          '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
-        ]
-      }
-    },
-    {
-      logo: './assets/education/iseb.jpg',
-      course: {
-        en: 'Master in Project Management',
-        es: 'Master en gestión de proyectos'
-      },
-      institution: 'Instituto Superior Europeo de Barcelona',
-      year: 2021,
-      tags: {
-        en: [
-          '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
-        ],
-        es: [
-          '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
-        ]
-      }
-    },
-    {
-      logo: './assets/education/ef.jpg',
-      course: {
-        en: 'English C2 Proficient',
-        es: 'Inglés Proficient C2'
-      },
-      institution: 'EF Education First',
-      year: 2020
-    },
-    {
-      logo: './assets/education/coursera.jpg',
-      course: {
-        en: 'Teach English Now! Foundational Principles',
-        es: '¡Enseña inglés ahora! Principios Fundacionales'
-      },
-      institution: 'Coursera',
-      year: 2018
-    },
-    {
-      logo: './assets/education/coursera.jpg',
-      course: {
-        en: 'Project Management: The basis of success',
-        es: 'Gestión de proyectos: la base del éxito'
-      },
-      institution: 'Coursera',
-      year: 2018
-    },
-    {
-      logo: './assets/education/ucv.png',
-      course: {
-        en: 'Modern languages, translator and interpreter',
-        es: 'Lenguas modernas, traductor e intérprete'
-      },
-      institution: 'Universidad Central de Venezuela',
-      year: 2014,
-      tags: {
-        en: [
-          '#Translator', '#Interpreter', '#English', '#French', '#Spanish'
-        ],
-        es: [
-          '#Traductor', '#Intérprete', '#Ingles', '#Frances', '#Español'
-        ]
-      }
-    }
-  ]
+    ]
+  }
 };

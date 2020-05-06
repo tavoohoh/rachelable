@@ -1,9 +1,32 @@
-<div class="page">
+<div class="page cover">
   <div class="content">
-    <div class="cover container">
+    <div class="cover container content-block">
       <h2 class="title">
-        {{ 'PAGES.ABOUT.TITLE' | translate }}
+        {{ pageContext.presentation.title[lang] }}
       </h2>
+      <p *ngFor="let paragraph of pageContext.presentation.content[lang]">
+        {{ paragraph }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="container content-block">
+    <h2 class="title">
+      {{ pageContext.education.title[lang] }}
+    </h2>
+    <div class="card" *ngFor="let course of pageContext.education.courses">
+      <span class="image"></span>
+      <span>{{ course.course[lang] }}</span>
+      <span>{{ course.institution }}</span>
+      <span>{{ course.year }}</span>
+
+      <ng-container *ngIf="course.tags">
+        <div *ngFor="let tag of course.tags[lang]">
+          <span>{{ tag }}</span>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

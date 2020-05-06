@@ -41,7 +41,10 @@ export interface HomeDbModel {
 export interface AboutModel {
   presentation: PresentationModel;
   callToAction: CallToActionModel;
-  education: Array<educationModel>;
+  education: {
+    title: ParagraphModel,
+    courses: Array<educationModel>;
+  };
 }
 
 export interface ContactModel {
