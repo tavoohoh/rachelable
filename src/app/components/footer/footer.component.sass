@@ -38,3 +38,23 @@ footer
   .footer-logo
     height: 24px
     
+  @media screen and (max-width: $sma)
+    grid-template-columns: 1fr
+    gap: 1rem
+    height: auto
+    padding: 1rem
+
+    .credits,
+    .dates,
+    .socialmedia
+      text-align: center
+      line-height: 1.4
+      margin: 0 auto
+
+    .dates
+      grid-row: 1
+
+    .credits
+      grid-row: 3
+      @include fontSmall
+    
