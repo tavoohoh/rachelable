@@ -16,5 +16,16 @@
   },
   "CAROUSEL": {
     "HOVER": "Toggle animation, put/remove finger or mouse over the card"
+  },
+  "ACTIONS": {
+    "SEND": "Send",
+    "LINKEDIN_ME": "Find me on LinkedIn",
+    "EMAIL_ME": "Email me"
+  },
+  "FORM": {
+    "CONTACT_NAME": "What's your name?",
+    "CONTACT_EMAIL": "What's your email address?",
+    "CONTACT_ORGANIZATION": "Where do you work?",
+    "CONTACT_MESSAGE": "What would you like to talk about?"
   }
 }

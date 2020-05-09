@@ -16,5 +16,16 @@
   },
   "CAROUSEL": {
     "HOVER": "Alternarna la animación, ponga/quite el dedo o mouse de la tarjeta"
+  },
+  "ACTIONS": {
+    "SEND": "Enviar",
+    "LINKEDIN_ME": "",
+    "EMAIL_ME": ""
+  },
+  "FORM": {
+    "CONTACT_NAME": "¿Cuál es tu nombre?",
+    "CONTACT_EMAIL": "¿Cuál es tu dirección de correo electrónico?",
+    "CONTACT_ORGANIZATION": "¿En dónde trabajas?",
+    "CONTACT_MESSAGE": "¿Qué te gustaría hablar?"
   }
 }

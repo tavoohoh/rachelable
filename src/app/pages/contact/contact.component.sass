@@ -1,0 +1,67 @@
+@import 'variables'
+    
+.contact
+  margin: 0
+
+  .title
+    color: $violet
+
+  p
+    margin: 0
+
+.duo-action
+  position: relative
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 1rem
+  background-color: $violet
+  padding: 5rem 3rem
+
+  @media screen and (max-width: $med)
+    grid-template-columns: auto
+    padding: 3rem
+
+  @media screen and (max-width: $sma)
+    padding: 1rem
+    
+  .action
+    @include transition(0.6s)
+    display: grid
+    align-self: center
+    text-decoration: none
+    outline: none
+    width: 100%
+    max-width: 400px
+    margin: 0 auto
+    padding: 2rem
+    border-radius: 2rem
+    background-color: $violet
+    box-shadow: 0 0px 0px rgba(0,0,0,0.0), 0 0px 0px rgba(0,0,0,0.0)
+
+    span
+      color: $white
+      align-self: center
+
+    .action-btn
+      @include fontParagraph
+      @include transition(0.8s)
+      background-color: $violet-var
+      padding: 1.2rem
+      border: 2px solid $white
+      border-radius: 1.6rem
+      text-align: center
+      text-transform: uppercase
+      font-weight: 700
+
+    .action-text
+      @include fontParagraph
+      padding-top: 1.5rem
+      text-align: center
+
+    &:hover
+      box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.1)
+      background-color: $violet-var
+
+      .action-btn
+        background-color: $violet
+      

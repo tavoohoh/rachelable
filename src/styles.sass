@@ -299,7 +299,8 @@ h3
     margin: 0
 
   .title
-    margin-top: 0 
+    margin-top: 0
+    font-weight: 900
     @include fontTitle()
 
   p
@@ -313,3 +314,32 @@ h3
   -moz-user-select: none
   -ms-user-select: none
   user-select: none
+
+
+/* form */
+form
+  display: grid
+  grid-template-columns: auto
+  gap: 1.3rem
+
+  input, textarea, button
+    font-size: 0.9rem
+    border: 2px solid $violet
+    border-radius: 1.2rem
+
+  input, textarea
+    color: $gray
+    padding: 0.9rem
+    overflow: hidden
+
+  textarea
+    resize: none
+
+  button
+    @include shadowShower
+    padding: 1rem
+    color: $white
+    background: $violet
+    text-transform: uppercase
+    width: 200px
+    margin-left: auto

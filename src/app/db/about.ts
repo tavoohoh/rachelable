@@ -36,23 +36,6 @@ export const AboutDB: AboutModel = {
       {
         logo: './assets/education/iseb.jpg',
         course: {
-          en: 'Master in Business Administration',
-          es: 'Maestría en Administración de Negocios'
-        },
-        institution: 'Instituto Superior Europeo de Barcelona',
-        year: 2021,
-        tags: {
-          en: [
-            '#Management', '#Planning', '#Administration'
-          ],
-          es: [
-            '#Gestión', '#Planificación', '#Administración'
-          ]
-        }
-      },
-      {
-        logo: './assets/education/iseb.jpg',
-        course: {
           en: 'Master in Project Management',
           es: 'Master en gestión de proyectos'
         },
@@ -64,6 +47,23 @@ export const AboutDB: AboutModel = {
           ],
           es: [
             '#Administración', '#RecursosHumanos', '#Finanzas'
+          ]
+        }
+      },
+      {
+        logo: './assets/education/iseb.jpg',
+        course: {
+          en: 'Master in Business Administration',
+          es: 'Maestría en Administración de Negocios'
+        },
+        institution: 'Instituto Superior Europeo de Barcelona',
+        year: 2021,
+        tags: {
+          en: [
+            '#Management', '#Planning', '#Administration'
+          ],
+          es: [
+            '#Gestión', '#Planificación', '#Administración'
           ]
         }
       },

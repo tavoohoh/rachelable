@@ -1,9 +1,35 @@
 <div class="page">
   <div class="content">
-    <div class="container">
+    <div class="contact container content-block">
       <h2 class="title">
-        {{ 'PAGES.CONTACT.TITLE' | translate }}
+        {{ pageContext.presentation.title[lang] }}
       </h2>
+      <p>
+        {{ pageContext.presentation.content[lang] }}
+      </p>
     </div>
+  </div>
+
+  <div class="container">
+    <form>
+      <input type="text" name="name" [placeholder]="'FORM.CONTACT_NAME' | translate">
+      <input type="text" name="organization" [placeholder]="'FORM.CONTACT_ORGANIZATION' | translate">
+      <input type="email" name="email" [placeholder]="'FORM.CONTACT_EMAIL' | translate">
+      <textarea name="message" cols="30" rows="3" [placeholder]="'FORM.CONTACT_MESSAGE' | translate"></textarea>
+      <button type="submit">
+        {{ 'ACTIONS.SEND' | translate }}
+      </button>
+    </form>
+  </div>
+
+  <div class="duo-action">
+    <a class="action" href="https://linkedin.com/in/rachelmatam" target="_blank" rel="noopener noreferrer">
+      <span class="action-btn">{{ 'ACTIONS.LINKEDIN_ME' | translate }}</span>
+      <span class="action-text">linkedin.com/in/rachelmatam</span>
+    </a>
+    <a class="action" href="mailto:hi@rachelable.com">
+      <span class="action-btn">{{ 'ACTIONS.EMAIL_ME' | translate }}</span>
+      <span class="action-text">hi@rachelable.com</span>
+    </a>
   </div>
 </div>
