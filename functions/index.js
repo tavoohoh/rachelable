@@ -1,17 +1,19 @@
 const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
 const cors = require('cors')({ origin: true });
-const gmailEmail = functions.config().gmail.email;
-const gmailPassword = functions.config().gmail.password;
 const mailTransport = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: gmailEmail,
-    pass: gmailPassword
+    user: functions.config().gmail.email,
+    pass: functions.config().gmail.password
   }
 });
 
-exports.submit = functions.https.onRequest((req, res) => {
+exports.health = functions.https.onRequest((req, res) => {
+  res.status(200).send({ health: 'Just fine' });
+});
+
+exports.contact = functions.https.onRequest((req, res) => {
   cors(req, res, () => {
     if (req.method !== 'POST') {
       return;
@@ -23,7 +25,7 @@ exports.submit = functions.https.onRequest((req, res) => {
       const mailOptions = {
         from: email,
         replyTo: email,
-        to: gmailEmail,
+        to: functions.config().gmail.email, // functions.config().contact.email
         subject: `Contact form: ${name}`,
         text: `From ${name}, ${email}, ${org}. Message: ${message}`,
         html: `

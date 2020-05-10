@@ -38,6 +38,12 @@ export class ContactComponent extends GenericComponent implements OnInit {
     if (this.contactForm.invalid) {
       return;
     }
+
+    this.lockerService.onSendcontactForm(this.contactForm.value)
+      .subscribe(() => {
+        console.log('sent');
+        this.contactForm.reset();
+      }, error => console.error('Error at ContactComponent.onSubmitContactForm:', error))
   }
 
 }

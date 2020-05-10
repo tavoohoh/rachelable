@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ButtonModel } from '../../models/button.model';
 import { FormBuilder } from '@angular/forms';
+import { LockerService } from '@app/services/locker.service';
 
 @Component({
   selector: 'ray-generic-page',
@@ -14,7 +15,8 @@ export class GenericComponent {
 
   constructor(
     private translateService: TranslateService,
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    public lockerService: LockerService
   ) { }
 
   public pageOnInit(callToActionConfig: ButtonModel): void {
