@@ -240,18 +240,18 @@ p
   margin: 0.5em 0
 
 p, b, strong, li
-  @include fontParagraph()
+  @include fontParagraph
 
 h1
-  @include fontTitle()
+  @include fontTitle
   font-weight: 700
 
 h2
-  @include fontSubitle()
+  @include fontSubitle
   font-weight: 700
 
 h3
-  @include fontBig()
+  @include fontBig
   font-weight: 700
 
 .condensed
@@ -271,14 +271,14 @@ h3
 
 /* buttons */
 .ray-btn
-  @include cleanButton()
-  @include transition()
+  @include cleanButton
+  @include transition
+  @include fontParagraph()
   width: max-content
   background-color: $violet
   padding: 1rem 3rem
   text-align: center
   color: $white
-  @include fontParagraph()
   text-transform: uppercase
   font-weight: 700
   border-radius: 1.4em
@@ -287,10 +287,10 @@ h3
     background-color: darken($violet, 5)
 
 .shadow-shawer
-  @include shadowShower()
+  @include shadowShower
 
 .shadow-shawer-text
-  @include shadowShowerText()
+  @include shadowShowerText
 
 /* content */
 .content-block
@@ -339,12 +339,17 @@ form
 
   button
     @include shadowShower
+    @include cleanButton
+    cursor: pointer
     padding: 1rem
     color: $white
     background: $violet
     text-transform: uppercase
     width: 200px
     margin-left: auto
+
+    &:hover, &:active, &:focus
+      background-color: darken($violet, 5)
 
   .form-field
 

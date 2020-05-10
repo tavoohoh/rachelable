@@ -29,8 +29,8 @@
     "CONTACT_MESSAGE": "What would you like to talk about?",
     "VALIDATION": {
       "NAME_REQUIRED": "The name is required.",
-      "EMAIL_REQUIRED": "Email is required. I won't send you spam, I promise",
-      "EMAIL_FORMAT": "The email format is not valid.",
+      "EMAIL_REQUIRED": "Email addess is required.",
+      "EMAIL_FORMAT": "The email address format is not valid.",
       "MESSAGE_REQUIRED": "The message is required."
     }
   }
