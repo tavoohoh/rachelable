@@ -26,6 +26,12 @@
     "CONTACT_NAME": "¿Cuál es tu nombre?",
     "CONTACT_EMAIL": "¿Cuál es tu dirección de correo electrónico?",
     "CONTACT_ORGANIZATION": "¿En dónde trabajas?",
-    "CONTACT_MESSAGE": "¿Qué te gustaría hablar?"
+    "CONTACT_MESSAGE": "¿Qué te gustaría hablar?",
+    "VALIDATION": {
+      "NAME_REQUIRED": "El nombre es obligatorio",
+      "EMAIL_REQUIRED": "El Correo electronico es requerido. No te enviaré spam, lo prometo.",
+      "EMAIL_FORMAT": "El formato del correo electrónico no es válido.",
+      "MESSAGE_REQUIRED": "El mensaje es obligatorio."
+    }
   }
 }

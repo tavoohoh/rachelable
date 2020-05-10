@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HomeDB } from '@app/db';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ButtonModel } from '../../models/button.model';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'ray-generic-page',
@@ -13,7 +13,8 @@ export class GenericComponent {
   public callToAction: ButtonModel;
 
   constructor(
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    public formBuilder: FormBuilder
   ) { }
 
   public pageOnInit(callToActionConfig: ButtonModel): void {

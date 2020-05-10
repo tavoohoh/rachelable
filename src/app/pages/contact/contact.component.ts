@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, AbstractControl } from '@angular/forms';
 import { GenericComponent } from '../generic/generic.component';
 import { ContactDB } from '@app/db';
 import { ButtonType } from '@app/enums';
@@ -9,7 +10,14 @@ import { ButtonType } from '@app/enums';
   styleUrls: ['./contact.component.sass']
 })
 export class ContactComponent extends GenericComponent implements OnInit {
-  
+  public submitted = false;
+  public contactForm = this.formBuilder.group({
+    name: ['', Validators.required],
+    org: [''],
+    message: ['', Validators.required],
+    email: ['', Validators.required]
+  });
+
   ngOnInit(): void {
     this.pageContext = ContactDB;
     const callToActionConfig = {
@@ -18,6 +26,18 @@ export class ContactComponent extends GenericComponent implements OnInit {
       type: ButtonType.LINK
     };
     this.pageOnInit(callToActionConfig);
+  }
+
+  get formControls(): { [key: string]: AbstractControl; } {
+    return this.contactForm.controls;
+  }
+
+  public onSubmitContactForm(): void {
+    this.submitted = true;
+
+    if (this.contactForm.invalid) {
+      return;
+    }
   }
 
 }

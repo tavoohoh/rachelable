@@ -228,6 +228,7 @@ body
 
 *
   box-sizing: border-box
+  outline: none!important
 
 h1,
 h2,
@@ -329,6 +330,7 @@ form
 
   input, textarea
     color: $gray
+    width: 100%
     padding: 0.9rem
     overflow: hidden
 
@@ -343,3 +345,16 @@ form
     text-transform: uppercase
     width: 200px
     margin-left: auto
+
+  .form-field
+
+    &.form-field-invalid
+      input, textarea
+        border-color: $red
+
+    .field-errors
+      margin-top: 0.5rem
+
+      span
+        @include fontSmall
+        color: $red

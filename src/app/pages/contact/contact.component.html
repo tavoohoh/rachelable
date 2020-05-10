@@ -11,11 +11,62 @@
   </div>
 
   <div class="container">
-    <form>
-      <input type="text" name="name" [placeholder]="'FORM.CONTACT_NAME' | translate">
-      <input type="text" name="organization" [placeholder]="'FORM.CONTACT_ORGANIZATION' | translate">
-      <input type="email" name="email" [placeholder]="'FORM.CONTACT_EMAIL' | translate">
-      <textarea name="message" cols="30" rows="3" [placeholder]="'FORM.CONTACT_MESSAGE' | translate"></textarea>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmitContactForm()">
+      <!-- name -->
+      <div class="form-field" [class.form-field-invalid]="submitted && formControls.name.errors">
+        <input
+          type="text" 
+          formControlName="name"
+          [placeholder]="'FORM.CONTACT_NAME' | translate"
+          required>
+
+        <div class="field-errors" *ngIf="submitted && formControls.name.errors">
+          <span *ngIf="formControls.name.errors.required">
+            {{ 'FORM.VALIDATION.NAME_REQUIRED' | translate }}
+          </span>
+        </div>
+      </div>
+
+      <!-- organization -->
+      <div class="form-field">
+        <input
+          type="text"
+          formControlName="org"
+          [placeholder]="'FORM.CONTACT_ORGANIZATION' | translate">
+      </div>
+
+      <!-- email -->
+      <div class="form-field" [class.form-field-invalid]="submitted && formControls.email.errors">
+        <input
+          type="email"
+          formControlName="email"
+          [placeholder]="'FORM.CONTACT_EMAIL' | translate"
+          required>
+
+        <div class="field-errors" *ngIf="submitted && formControls.email.errors">
+          <span *ngIf="formControls.email.errors.required">
+            {{ 'FORM.VALIDATION.EMAIL_REQUIRED' | translate }}
+          </span>
+          <span *ngIf="formControls.email.errors.email">
+            {{ 'FORM.VALIDATION.EMAIL_FORMAT' | translate }}</span>
+        </div>
+      </div>
+
+      <!-- message -->
+      <div class="form-field" [class.form-field-invalid]="submitted && formControls.message.errors">
+        <textarea
+          cols="30" rows="3"
+          formControlName="message" 
+          [placeholder]="'FORM.CONTACT_MESSAGE' | translate"
+          required></textarea>
+
+        <div class="field-errors" *ngIf="submitted && formControls.message.errors">
+          <span *ngIf="formControls.message.errors.required">
+            {{ 'FORM.VALIDATION.MESSAGE_REQUIRED' | translate }}
+          </span>
+        </div>
+      </div>
+
       <button type="submit">
         {{ 'ACTIONS.SEND' | translate }}
       </button>
