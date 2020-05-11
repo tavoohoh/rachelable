@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, AbstractControl } from '@angular/forms';
 import { GenericComponent } from '../generic/generic.component';
 import { ContactDB } from '@app/db';
-import { ButtonType } from '@app/enums';
 
 @Component({
   selector: 'ray-contact',
@@ -11,6 +10,7 @@ import { ButtonType } from '@app/enums';
 })
 export class ContactComponent extends GenericComponent implements OnInit {
   public submitted = false;
+  public loading = false;
   public contactForm = this.formBuilder.group({
     name: ['', Validators.required],
     org: [''],
@@ -20,12 +20,7 @@ export class ContactComponent extends GenericComponent implements OnInit {
 
   ngOnInit(): void {
     this.pageContext = ContactDB;
-    const callToActionConfig = {
-      text: '',
-      action: '/contact',
-      type: ButtonType.LINK
-    };
-    this.pageOnInit(callToActionConfig);
+    this.pageOnInit();
   }
 
   get formControls(): { [key: string]: AbstractControl; } {
@@ -39,11 +34,16 @@ export class ContactComponent extends GenericComponent implements OnInit {
       return;
     }
 
+    this.loading = true;
     this.lockerService.onSendcontactForm(this.contactForm.value)
       .subscribe(() => {
-        console.log('sent');
         this.contactForm.reset();
-      }, error => console.error('Error at ContactComponent.onSubmitContactForm:', error))
+        this.loading = false;
+        this.submitted = false;
+      }, error => {
+        console.error('Error at ContactComponent.onSubmitContactForm:', error);
+        this.loading = false;
+      })
   }
 
 }

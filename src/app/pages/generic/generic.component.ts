@@ -19,8 +19,11 @@ export class GenericComponent {
     public lockerService: LockerService
   ) { }
 
-  public pageOnInit(callToActionConfig: ButtonModel): void {
-    this.callToAction = callToActionConfig;
+  public pageOnInit(callToActionConfig?: ButtonModel): void {
+    if (callToActionConfig) {
+      this.callToAction = callToActionConfig;
+    }
+
     this.setContext(this.translateService.currentLang);
     this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.setContext(event.lang);
@@ -29,7 +32,10 @@ export class GenericComponent {
 
   public setContext(lang: string): void {
     this.lang = lang;
-    this.callToAction.text = this.pageContext.callToAction.buttonText[this.lang];
+
+    if (this.callToAction) {
+      this.callToAction.text = this.pageContext.callToAction.buttonText[this.lang];
+    }
   }
 
 }

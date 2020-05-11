@@ -25,7 +25,7 @@ exports.contact = functions.https.onRequest((req, res) => {
       const mailOptions = {
         from: email,
         replyTo: email,
-        to: functions.config().gmail.email, // functions.config().contact.email
+        to: functions.config().contact.email,
         subject: `Contact form: ${name}`,
         text: `From ${name}, ${email}, ${org}. Message: ${message}`,
         html: `
