@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
       text: 'PAGES.HOME.TITLE'
     },
     {
-      path: '/about-me',
+      path: '/entry',
       text: 'PAGES.ABOUT.TITLE'
     },
     {

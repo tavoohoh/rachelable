@@ -29,12 +29,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'about-me',
+    path: 'entry',
     component: AboutComponent
   },
   {
     path: 'about', 
-    redirectTo: '/about-me'
+    redirectTo: '/entry'
   },
   {
     path: 'contact',
