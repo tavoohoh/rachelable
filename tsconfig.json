@@ -20,22 +20,22 @@
       "@app/*": [
         "src/app/*"
       ],
-      "@comp/*": [
+      "@com/*": [
         "src/app/components/*"
       ],
-      "@cons/*": [
+      "@con/*": [
         "src/app/constants/*"
       ],
-      "@enum/*": [
+      "@enu/*": [
         "src/app/enums/*"
       ],
-      "@page/*": [
+      "@pag/*": [
         "src/app/pages/*"
       ],
-      "@serv/*": [
+      "@ser/*": [
         "src/app/services/*"
       ],
-      "@mode/*": [
+      "@mod/*": [
         "src/app/models/*"
       ]
     },

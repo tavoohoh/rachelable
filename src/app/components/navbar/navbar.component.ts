@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationArrayModel } from '@mode/index';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import {NavigationArrayModel} from "@mod/navigation.model";
 
 @Component({
   selector: 'ray-navbar',
