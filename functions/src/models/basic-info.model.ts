@@ -1,5 +1,3 @@
-import {IconNameEnum} from "@enu/icon-name.enum";
-
 export interface BasicInfoModel {
   image: string;
   title: string;
@@ -13,7 +11,7 @@ export interface BasicInfoModel {
   aboutActionText: string;
   aboutActionUrl: string;
   aboutLinks: {
-    iconName: IconNameEnum;
+    iconName: string;
     url: string;
   }[];
 }
