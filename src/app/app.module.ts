@@ -10,53 +10,24 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 
-import { NavbarComponent } from '@comp/navbar/navbar.component';
-import { FooterComponent } from '@comp/footer/footer.component';
-import { CallToActionComponent } from '@comp/call-to-action/call-to-action.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
-import { GenericComponent } from '@page/generic/generic.component';
-import { HomeComponent } from '@page/home/home.component';
-import { ContactComponent } from '@page/contact/contact.component';
-import { AboutComponent } from '@page/about/about.component';
-
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent
+    path: '',
+    loadChildren: () => import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'entry',
-    component: AboutComponent
+    path: '**',
+    redirectTo: ''
   },
-  {
-    path: 'about', 
-    redirectTo: '/entry'
-  },
-  {
-    path: 'contact',
-    component: ContactComponent
-  },
-  {
-    path: '**', 
-    redirectTo: '/home'
-  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    CallToActionComponent,
-    CarouselComponent,
-    GenericComponent,
-    HomeComponent,
-    ContactComponent,
-    AboutComponent
   ],
   imports: [
     BrowserModule,

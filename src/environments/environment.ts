@@ -2,9 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const storageUrl = 'https://firebasestorage.googleapis.com/v0/b/rachelableapp.appspot.com/o';
+
 export const environment = {
   production: false,
-  apiUrl: ''
+  urls: {
+    content: `${storageUrl}/content`
+  }
 };
 
 /*

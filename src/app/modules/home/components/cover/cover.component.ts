@@ -1,14 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {BasicInfoModel} from "@mod/db/basic-info.model";
 
 @Component({
-  selector: 'ray-home-main',
+  selector: 'ray-home-cover',
   templateUrl: './cover.component.html',
   styleUrls: ['./cover.component.scss']
 })
-export class CoverHomeComponent implements OnInit {
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
+export class CoverHomeComponent {
+  @Input() context: BasicInfoModel;
 }

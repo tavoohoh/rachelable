@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["http://localhost:4200/", "https://rachelable.com/"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]
