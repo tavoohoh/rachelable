@@ -9,8 +9,8 @@
     "deploy:functions": "firebase deploy --only functions",
     "deploy:hosting": "npm run build && firebase deploy --only hosting",
     "test": "ng test",
-    "lint": "ng lint --ts-config tslint.json",
-    "lint:fix": "ng lint --fix --ts-config tslint.json",
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier \"src/**/*.ts\"",
     "e2e": "ng e2e"
