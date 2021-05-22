@@ -3,14 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 const storageUrl =
-  'https://firebasestorage.googleapis.com/v0/b/rachelableapp.appspot.com/o'
+  'https://firebasestorage.googleapis.com/v0/b/rachelableapp.appspot.com/o';
 
 export const environment = {
   production: false,
   urls: {
     content: `${storageUrl}/content`,
   },
-}
+};
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core'
-import { BasicInfoModel } from '@mod/db/basic-info.model'
+import { Component, Input } from '@angular/core';
+import { BasicInfoModel } from '@mod/db/basic-info.model';
 
 @Component({
   selector: 'ray-home-cover',
@@ -7,5 +7,5 @@ import { BasicInfoModel } from '@mod/db/basic-info.model'
   styleUrls: ['./cover.component.scss'],
 })
 export class CoverHomeComponent {
-  @Input() context: BasicInfoModel
+  @Input() context: BasicInfoModel;
 }

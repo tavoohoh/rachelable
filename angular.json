@@ -112,12 +112,22 @@
           "options": {
             "browserTarget": "rachelable:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "defaultProject": "rachelable",
   "cli": {
-    "analytics": "17aaaec8-9e08-40f1-a45d-a77472f405db"
+    "analytics": "17aaaec8-9e08-40f1-a45d-a77472f405db",
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }

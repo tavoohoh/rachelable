@@ -2,7 +2,14 @@ image:
 title: About Me
 actionText: Check out my CV
 actionUrl:
-links: [{"iconName":"TWITTER","url":"https://www.linkedin.com/in/rachelmatam/"},{"iconName":"LINKEDIN","url":"https://twitter.com/"}]
+links:
+  [
+    {
+      'iconName': 'TWITTER',
+      'url': 'https://www.linkedin.com/in/rachelmatam/',
+    },
+    { 'iconName': 'LINKEDIN', 'url': 'https://twitter.com/' },
+  ]
 ---
 Trilingual Project Manager with experience in process innovation and management of multicultural teams.
 Leader with the ability to advise, analyze and optimize project areas related to scope, time, cost, quality,
