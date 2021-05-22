@@ -1,0 +1,36 @@
+@import 'variables';
+
+$coverImage: 300px;
+
+.cover {
+  display: grid;
+  height: 100vh;
+  background-color: $primary;
+
+  &-content {
+    align-self: center;
+    display: grid;
+    gap: 24px;
+
+    &-image {
+      width: $coverImage;
+      height: $coverImage;
+      margin: 0 auto;
+      border-radius: 50%;
+      background-image: url("../../../../../assets/images/cover.jpg");
+      background-size: 320%;
+      background-position-y: 19%;
+      background-position-x: 46%;
+    }
+
+    &-title,
+    &-subtitle {
+      color: $light;
+      text-align: center;
+    }
+
+    &-subtitle {
+      margin-bottom: 16px;
+    }
+  }
+}

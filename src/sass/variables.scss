@@ -1,0 +1,30 @@
+/* colors */
+$primary: #1A113D;
+$secondary: #3B2F5E;
+$alternate: #4F5572;
+$light: #F5F3FA;
+
+/* screen */
+$sma: 640px;
+$med: 900px;
+
+/* effects */
+$transition: 0.3s ease-in-out;
+$opacity: 0.5;
+
+/* layout */
+@mixin cleanButton() {
+  background: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+@mixin transition($trans: 0.3s) {
+  -webkit-transition: $trans ease-in-out;
+  -moz-transition: $trans ease-in-out;
+  -o-transition: $trans ease-in-out;
+  transition: $trans ease-in-out;
+}

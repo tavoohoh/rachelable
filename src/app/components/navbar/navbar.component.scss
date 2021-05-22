@@ -1,0 +1,56 @@
+@import 'variables';
+
+$logo: 64px;
+
+nav {
+  position: absolute;
+  display: grid;
+  grid-template-columns: $logo auto repeat(5, max-content);
+  gap: 22px;
+  padding: $logo;
+  box-sizing: border-box;
+  z-index: 1;
+  width: 100%;
+
+  .logo,
+  .link {
+    cursor: pointer;
+  }
+
+  .logo {
+    display: grid;
+    height: $logo;
+    width: $logo;
+    border-radius: 50%;
+    background-color: $light;
+    color: $primary;
+
+    .icon-logo {
+      align-self: center;
+      text-align: center;
+      font-size: 45px;
+    }
+  }
+
+  .link {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $light;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}
+
+nav.inverted-colors {
+  .logo {
+    background-color: $primary;
+    color: $light;
+  }
+
+  .link {
+    color: $primary;
+  }
+}

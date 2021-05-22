@@ -1,0 +1,82 @@
+@import 'variables';
+
+html,
+body {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  color: $primary;
+
+  *::selection {
+    background-color: $secondary;
+    color: $light;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  outline: none!important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 96px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 72px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+p, b, strong, li {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.font-big {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.font-medium {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.font-small {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.disabled {
+  opacity: $opacity;
+  cursor: default;
+  pointer-events: none;
+}
+
+.main {
+  position: relative;
+}
+
+.container {
+  max-width: 1195px;
+  margin: 0 auto;
+}

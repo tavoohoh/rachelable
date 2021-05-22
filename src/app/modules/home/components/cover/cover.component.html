@@ -1,8 +1,11 @@
-<ng-container *ngIf="context">
-  {{ context.title }}
-  {{ context.subtitle }}
-  {{ context.credits }}
-  {{ context.email }}
-  {{ context.image }}
-  {{ context.name }}
-</ng-container>
+<div class="cover" *ngIf="context">
+  <div class="cover-content">
+    <div class="cover-content-image"></div>
+    <h1 class="cover-content-title">
+      {{ context.title }}
+    </h1>
+    <h4 class="cover-content-subtitle">
+      {{ context.subtitle }}
+    </h4>
+  </div>
+</div>
