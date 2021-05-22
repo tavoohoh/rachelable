@@ -25,11 +25,7 @@ const COMPONENTS = [
 
 @NgModule({
   declarations: [HomeComponent, ...COMPONENTS],
-  imports: [
-    RouterModule.forChild(ROUTES),
-    CommonModule,
-    ComponentsModule
-  ],
+  imports: [RouterModule.forChild(ROUTES), CommonModule, ComponentsModule],
   exports: [RouterModule],
 })
 export class HomeModule {}
