@@ -1,47 +1,12 @@
 /* colors */
-$violet: #3b378e
-$violet-var: #4a46a4
-$dark-blue: #030c1b
-$black: #030b1b
-$light-gray: #cdcdcd
-$gray: #5a5b5e
-$white: #ffffff
-$red: #dc3545
+$primary: #1A113D
+$secondary: #3B2F5E
+$alternate: #4F5572
+$light: #F5F3FA
 
 /* screen */
 $sma: 640px
 $med: 900px
-
-/* font */
-@mixin fontParagraph()
-  font-size: 1.2em
-
-  @media screen and (max-width: $med)
-    font-size: 1em
-
-@mixin fontTitle()
-  font-size: 3em
-
-  @media screen and (max-width: $med)
-    font-size: 2.5em
-
-@mixin fontSubitle()
-  font-size: 2em
-
-  @media screen and (max-width: $med)
-    font-size: 1.5em
-
-@mixin fontBig()
-  font-size: 1.4em
-
-  @media screen and (max-width: $med)
-    font-size: 1.2em
-
-@mixin fontSmall()
-  font-size: 0.8em
-
-  @media screen and (max-width: $med)
-    font-size: 0.7em
 
 /* layout */
 
@@ -53,26 +18,11 @@ $med: 900px
   cursor: pointer
   line-height: 1
 
-@mixin violetGradient()
-  background-color: $violet
-  background: linear-gradient(286deg, $violet 30%, $violet-var 100%)
-
-@mixin violetVarGradient()
-  background-color: darken($violet, 5)
-  background: linear-gradient(286deg, darken($violet, 10) 30%, darken($violet-var, 10) 100%)
-
 @mixin transition($trans: 0.3s)
   -webkit-transition: $trans ease-in-out
   -moz-transition: $trans ease-in-out
   -o-transition: $trans ease-in-out
   transition: $trans ease-in-out
-
-@mixin shadowShower()
-  box-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.1)
-  
-@mixin shadowShowerText()
-  text-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.2)
-  
 
 /* effects */
 $transition: 0.3s ease-in-out
