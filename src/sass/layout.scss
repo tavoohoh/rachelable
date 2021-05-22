@@ -11,6 +11,10 @@ body {
   }
 }
 
+body {
+  text-rendering: optimizeLegibility;
+}
+
 * {
   box-sizing: border-box;
   outline: none!important;
