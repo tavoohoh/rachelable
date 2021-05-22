@@ -9,5 +9,5 @@ export enum IconNameEnum {
   FACEBOOK = 'FACEBOOK',
   MENU = 'MENU',
   CARET = 'CARET',
-  LINK = 'LINK'
+  LINK = 'LINK',
 }

@@ -1,5 +1,5 @@
 export interface SectionModel {
-  title: string;
-  description: string;
-  action: string;
+  title: string
+  description: string
+  action: string
 }
