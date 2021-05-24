@@ -1,0 +1,1 @@
+  23/05/21 3:33:04 PM GMT-5: Starting composition “Comp 1”.  Output To: /Users/gustavo.santamaria/Projects/rachelable/resources/logo-bounce.mov    23/05/21 3:33:04 PM GMT-5: Finished composition “Comp 1”.  Total Time Elapsed: 0 SecondsLog closed on 23/05/21 at 3:33:04 PM GMT-5
