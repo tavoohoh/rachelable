@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { ComponentsModule } from '@com/components.module';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AppDataModel } from '@mod/app-data.model';
 import { ContentService } from '@ser/content.service';
 import { BasicInfoModel } from '@mod/db/basic-info.model';
@@ -24,13 +24,23 @@ export class AppService {
       '%2Fabout-me.yml?alt=media&token='
     ).pipe(map((data) => data as AboutMeModel)).toPromise();
 
-    this.$appData.next({
+    this.appData = {
       basicInfo,
       about
-    });
+    };
 
-    console.log(this.$appData.value);
+    return this.appData;
+  }
 
+  public appDataAsObservable(): Observable<AppDataModel> {
+    return this.$appData.asObservable();
+  }
+
+  public get appData(): AppDataModel {
     return this.$appData.value;
+  }
+
+  public set appData(data: AppDataModel) {
+    this.$appData.next(data);
   }
 }
