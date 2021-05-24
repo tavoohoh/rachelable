@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.service.initApp();
-    this.loading = false;
+
+    setTimeout(() => this.loading = false, 1000);
   }
 }
