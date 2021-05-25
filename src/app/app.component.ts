@@ -7,6 +7,7 @@ import { AppService } from '@app/app.service';
     <ray-loader *ngIf="loading"></ray-loader>
     <div class="main" *ngIf="!loading">
       <router-outlet></router-outlet>
+      <ray-footer></ray-footer>
     </div>
   `,
   styles: [],

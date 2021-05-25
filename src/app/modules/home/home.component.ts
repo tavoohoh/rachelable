@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private service: AppService,
-    private metaDataService: MetaDataService
+    readonly metaDataService: MetaDataService
   ) {
     metaDataService.setMetaData(PageName.HOME);
   }
