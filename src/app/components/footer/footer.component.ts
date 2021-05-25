@@ -11,11 +11,10 @@ export class FooterComponent implements OnInit {
   public currentYear = new Date().getFullYear();
   public context: BasicInfoModel;
 
-  constructor(private service: AppService) {
-  }
+  constructor(private service: AppService) {}
 
   ngOnInit(): void {
-    this.service.appDataAsObservable().subscribe(data => {
+    this.service.appDataAsObservable().subscribe((data) => {
       if (data.basicInfo) {
         this.context = data.basicInfo;
       }
