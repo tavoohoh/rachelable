@@ -16,17 +16,19 @@ export class AppService {
   constructor(private contentService: ContentService) {}
 
   public async initApp(): Promise<AppDataModel> {
-    const basicInfo = await this.contentService.get(
-      '%2Fbasic-info.yml?alt=media&token='
-    ).pipe(map((data) => data as BasicInfoModel)).toPromise();
+    const basicInfo = await this.contentService
+      .get('%2Fbasic-info.yml?alt=media&token=')
+      .pipe(map((data) => data as BasicInfoModel))
+      .toPromise();
 
-    const about = await this.contentService.get(
-      '%2Fabout-me.yml?alt=media&token='
-    ).pipe(map((data) => data as AboutMeModel)).toPromise();
+    const about = await this.contentService
+      .get('%2Fabout-me.yml?alt=media&token=')
+      .pipe(map((data) => data as AboutMeModel))
+      .toPromise();
 
     this.appData = {
       basicInfo,
-      about
+      about,
     };
 
     return this.appData;

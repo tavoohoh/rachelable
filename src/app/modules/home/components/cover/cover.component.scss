@@ -6,6 +6,10 @@ $coverImage: 300px;
   display: grid;
   height: 100vh;
   background-color: $primary;
+  background-image: url("../../../../../assets/images/universe.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   &-content {
     align-self: center;
@@ -17,10 +21,8 @@ $coverImage: 300px;
       height: $coverImage;
       margin: 0 auto;
       border-radius: 50%;
-      background-image: url("../../../../../assets/images/cover.jpg");
-      background-size: 320%;
-      background-position-y: 19%;
-      background-position-x: 46%;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     &-title,

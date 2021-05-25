@@ -1,0 +1,16 @@
+@import 'variables';
+
+.link-button,
+button {
+  @include cleanButton;
+  border-radius: $radius1;
+  background-color: $primary;
+  color: $light;
+  font-weight: 600;
+  padding: 10px 24px;
+  width: max-content;
+}
+
+.link-icon {
+  color: $primary;
+}

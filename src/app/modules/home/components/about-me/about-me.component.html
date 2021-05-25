@@ -1,0 +1,17 @@
+<div class="container about-me" id="about_me">
+  <div class="about-me-image">
+    <img [src]="context.image" alt="Rachel Mata, Project Manager">
+  </div>
+  <div class="about-me-content">
+    <h2>
+      {{ context.title }}
+    </h2>
+    <div class="inner-html" [innerHTML]="context.content"></div>
+    <a class="link-button" [href]="context.actionUrl" target="_blank">
+      {{ context.actionText }}
+    </a>
+    <div class="about-me-content-actions">
+      <a class="link-icon icon-{{ link.iconName }}" *ngFor="let link of context.links" [href]="link.url" target="_blank"></a>
+    </div>
+  </div>
+</div>

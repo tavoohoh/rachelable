@@ -30,8 +30,11 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
-    ComponentsModule
+    RouterModule.forRoot(routes, {
+      relativeLinkResolution: 'legacy',
+      anchorScrolling: 'enabled',
+    }),
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

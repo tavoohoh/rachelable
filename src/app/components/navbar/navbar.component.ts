@@ -15,20 +15,24 @@ export class NavbarComponent {
       text: 'Home',
     },
     {
-      path: '/#about-me',
+      path: '',
       text: 'About Me',
+      fragment: 'about_me',
+      disableActiveState: true,
     },
+    // {
+    //   path: '/blog',
+    //   text: 'Blog',
+    // },
+    // {
+    //   path: '/portfolio',
+    //   text: 'Portfolio',
+    // },
     {
-      path: '/blog',
-      text: 'Blog',
-    },
-    {
-      path: '/portfolio',
-      text: 'Portfolio',
-    },
-    {
-      path: '/#contact',
+      path: '',
       text: 'Contact',
+      fragment: 'contact',
+      disableActiveState: true,
     },
   ];
 }

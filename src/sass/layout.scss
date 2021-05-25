@@ -33,42 +33,42 @@ p {
 }
 
 h1 {
-  font-size: 6.000em;
+  font-size: $fontSize1;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 4.500em;
+  font-size: $fontSize2;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 36px;
+  font-size: $fontSize3;
   font-weight: 600;
 }
 
 h4 {
-  font-size: 2.250em;
+  font-size: $fontSize3;
   font-weight: 300;
 }
 
 p, b, strong, li {
-  font-size: 1.000em;
+  font-size: $fontSize6;
   font-weight: 300;
 }
 
 .font-big {
-  font-size: 1.500em;
+  font-size: $fontSize4;
   font-weight: 300;
 }
 
 .font-medium {
-  font-size: 1.125em;
+  font-size: $fontSize5;
   font-weight: 300;
 }
 
 .font-small {
-  font-size: 0.750em;
+  font-size: $fontSize7;
   font-weight: 300;
 }
 
@@ -85,4 +85,13 @@ p, b, strong, li {
 .container {
   max-width: 1195px;
   margin: 0 auto;
+  padding: 90px;
+}
+
+.inner-html {
+  p {
+    font-size: $fontSize4;
+    margin: 30px 0;
+    line-height: 1.4;
+  }
 }

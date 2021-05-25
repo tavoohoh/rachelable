@@ -9,9 +9,10 @@
 
   <!-- url links -->
   <a class="link"
-    *ngFor="let link of links"
-    [routerLink]="link.path"
-    routerLinkActive="active"
+      *ngFor="let link of links"
+      [routerLink]="link.path"
+      [fragment]="link.fragment"
+      [routerLinkActive]="link.disableActiveState ? '' : 'active'"
   >
     {{ link.text }}
   </a>

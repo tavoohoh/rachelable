@@ -12,6 +12,22 @@ $med: 900px;
 $transition: 0.3s ease-in-out;
 $opacity: 0.5;
 
+/* font size */
+$fontSize1: 6rem;
+$fontSize2: 4.5rem;
+$fontSize3: 2.25rem;
+$fontSize4: 1.5rem;
+$fontSize5: 1.125rem;
+$fontSize6: 1rem;
+$fontSize7: 0.75rem;
+
+/* gap */
+$gap1: 90px;
+$gap2: 40px;
+
+/* radius */
+$radius1: 8px;
+
 /* layout */
 @mixin cleanButton() {
   background: none;

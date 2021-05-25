@@ -31,11 +31,16 @@ export class ContentService {
 
     attrStr.forEach((s) => {
       const attr = s.split(': ');
+      let attrValue = attr[1] || null;
 
-      if (attr[0] && attr[1]) {
+      if (attr[0] && attrValue) {
+        if (attrValue.includes('[')) {
+          attrValue = JSON.parse(attrValue);
+        }
+
         json = {
           ...json,
-          [attr[0]]: attr[1],
+          [attr[0]]: attrValue,
         };
       }
     });
