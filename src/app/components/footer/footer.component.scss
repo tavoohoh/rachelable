@@ -1,0 +1,30 @@
+@import "variables";
+
+footer {
+  background-color: $primary;
+  padding: $gap2;
+
+  * {
+    text-align: center;
+    color: $light;
+  }
+
+  h3 {
+    display: block;
+    margin-bottom: 18px;
+  }
+
+  .link,
+  address {
+    display: block;
+    font-size: $fontSize5;
+  }
+
+  .link {
+    margin-bottom: 12px;
+  }
+
+  address {
+    margin-bottom: $gap2;
+  }
+}

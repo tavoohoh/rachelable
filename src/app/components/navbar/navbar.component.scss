@@ -37,6 +37,7 @@ nav {
     text-transform: uppercase;
     font-weight: 700;
     color: $light;
+    text-decoration: unset;
 
     &.active {
       text-decoration: underline;

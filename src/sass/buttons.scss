@@ -13,4 +13,10 @@ button {
 
 .link-icon {
   color: $primary;
+  text-decoration: unset;
+}
+
+.link {
+  text-decoration: underline;
+  font-weight: 600;
 }

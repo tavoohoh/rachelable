@@ -5,7 +5,7 @@ import { BasicInfoModel } from '@mod/db/basic-info.model';
 @Component({
   selector: 'ray-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.sass'],
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
   public currentYear = new Date().getFullYear();
