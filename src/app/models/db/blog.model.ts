@@ -1,12 +1,21 @@
 import { SectionModel } from './section.model';
 
-export interface BlogModel extends SectionModel {}
+export interface BlogModel extends SectionModel {
+  blogs: string[];
+}
 
-export interface BlogEntryModel {
+export class BlogEntryModel {
   image: string;
   title: string;
+  overview: string;
+  author: string;
+  authorImage: string;
   date: string;
-  readTime: string;
+  tags: string[];
   content: string;
-  tags: string;
+  estimatedReadTime: () => number = () => {
+    const wpm = 225;
+    const words = this.content.trim().split(/\s+/).length;
+    return Math.ceil(words / wpm);
+  }
 }
