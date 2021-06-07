@@ -1,6 +1,7 @@
 @import 'variables';
 
 $coverImage: 300px;
+$medCoverImage: 230px;
 
 .cover {
   display: grid;
@@ -23,6 +24,11 @@ $coverImage: 300px;
       border-radius: 50%;
       background-size: cover;
       background-repeat: no-repeat;
+
+      @media screen and (max-width: $med) {
+        width: $medCoverImage;
+        height: $medCoverImage;
+      }
     }
 
     &-title,
