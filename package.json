@@ -31,9 +31,11 @@
     "cors": "^2.8.5",
     "firebase": "^8.6.1",
     "firebase-functions": "^3.14.1",
+    "js-yaml": "^4.1.0",
     "rxjs": "~6.5.4",
     "showdown": "^1.9.1",
     "tslib": "^2.0.0",
+    "yamljs": "^0.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -46,7 +48,7 @@
     "@angular/cli": "~12.0.0",
     "@angular/compiler-cli": "~12.0.1",
     "@angular/language-service": "~12.0.1",
-    "@types/node": "^12.11.1",
+    "@types/node": "^15.6.1",
     "@typescript-eslint/eslint-plugin": "4.23.0",
     "@typescript-eslint/parser": "4.23.0",
     "codelyzer": "^6.0.2",

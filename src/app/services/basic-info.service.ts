@@ -10,7 +10,7 @@ import { BasicInfoModel } from '@mod/db/basic-info.model';
 export class BasicInfoService extends ServiceClass {
   public get(): Observable<BasicInfoModel> {
     const contextPath =
-      '%2Fbasic-info.yml?alt=media&token=00232528-5557-4076-a69f-58c9e9efb928';
+      '%2Fbasic-info.yml';
 
     return this.service
       .get(contextPath)
