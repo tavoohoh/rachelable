@@ -10,11 +10,8 @@ import { BlogModel } from '@mod/db/blog.model';
 })
 export class BasicInfoService extends ServiceClass {
   public getMain(): Observable<BlogModel> {
-    const contextPath =
-      'blogs%2F_main.yml?alt=media&token=';
+    const contextPath = 'blogs%2F_main.yml?alt=media&token=';
 
-    return this.service
-      .get(contextPath)
-      .pipe(map((data) => data as BlogModel));
+    return this.service.get(contextPath).pipe(map((data) => data as BlogModel));
   }
 }

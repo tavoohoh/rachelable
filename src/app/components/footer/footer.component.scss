@@ -9,9 +9,10 @@ footer {
     color: $light;
   }
 
-  h3 {
+  h4 {
     display: block;
     margin-bottom: 18px;
+    font-size: 48px;
   }
 
   .link,
@@ -26,5 +27,19 @@ footer {
 
   address {
     margin-bottom: $gap2;
+  }
+}
+
+@media screen and (max-width: $med) {
+  footer {
+    h4 {
+      font-size: 24px;
+    }
+
+    span {
+      display: block;
+    }
+
+    padding-bottom: 110px;
   }
 }

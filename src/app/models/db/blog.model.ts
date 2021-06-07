@@ -17,5 +17,5 @@ export class BlogEntryModel {
     const wpm = 225;
     const words = this.content.trim().split(/\s+/).length;
     return Math.ceil(words / wpm);
-  }
+  };
 }
