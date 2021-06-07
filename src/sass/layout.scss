@@ -20,6 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 18px;
+  background-color: $light;
 }
 
 * {
@@ -119,6 +120,10 @@ p, b, strong, li {
   max-width: 1195px;
   margin: 0 auto;
   padding: 90px;
+
+  @media screen and (max-width: $med) {
+    padding: 30px;
+  }
 }
 
 .inner-html {
