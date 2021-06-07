@@ -53,6 +53,10 @@ h1 {
 h2 {
   font-size: $fontSize2;
   font-weight: 700;
+
+  @media screen and (max-width: $med) {
+    font-size: $medFontSize2;
+  }
 }
 
 h3,
