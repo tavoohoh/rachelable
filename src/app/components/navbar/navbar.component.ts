@@ -7,7 +7,7 @@ import { NavigationArrayModel } from '@mod/navigation.model';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  public openMenu: boolean;
+  public openMenu = false;
   public invertedColors: boolean;
   public links: NavigationArrayModel = [
     {

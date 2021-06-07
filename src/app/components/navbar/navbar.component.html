@@ -1,4 +1,4 @@
-<nav [class.inverted-colors]="invertedColors">
+<nav [class.inverted-colors]="invertedColors" [class.open-menu]="openMenu">
   <!-- logo -->
   <a class="logo" routerLink="/">
     <span class="icon-logo"></span>
@@ -8,13 +8,19 @@
   <span></span>
 
   <!-- url links -->
-  <a class="link"
-      *ngFor="let link of links"
-      [routerLink]="link.path"
-      [fragment]="link.fragment"
-      [routerLinkActive]="link.disableActiveState ? '' : 'active'"
-  >
-    {{ link.text }}
-  </a>
+  <div class="links">
+    <a class="link"
+       *ngFor="let link of links"
+       [routerLink]="link.path"
+       [fragment]="link.fragment"
+       [routerLinkActive]="link.disableActiveState ? '' : 'active'"
+       (click)="openMenu = false"
+    >
+      {{ link.text }}
+    </a>
+  </div>
 </nav>
 
+<div class="float-menu" (click)="openMenu = !openMenu" [class.caret-btn]="openMenu">
+  <span class="{{ openMenu ? 'icon-caret-down' : 'icon-menu' }}"></span>
+</div>
