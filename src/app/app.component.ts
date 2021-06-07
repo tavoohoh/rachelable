@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.service.initApp();
-    this.loading = false
+    this.loading = false;
 
     setTimeout(() => (this.showLoader = false), 1300);
   }

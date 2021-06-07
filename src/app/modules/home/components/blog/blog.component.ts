@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogModel } from '@mod/db/blog.model';
+import { BlogEntryModel, BlogModel } from '@mod/db/blog.model';
 import { BlogService } from '@ser/blog.service';
 
 @Component({
@@ -8,17 +8,18 @@ import { BlogService } from '@ser/blog.service';
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogHomeComponent implements OnInit {
-  public blogs: BlogModel;
+  public context: BlogModel;
+  public entries: BlogEntryModel[];
+  public lastEntry: BlogEntryModel;
 
-  constructor(
-    private service: BlogService
-  ) {}
+  constructor(private service: BlogService) {}
 
-  ngOnInit(): void {
-    this.service
-      .getMain()
-      .subscribe(data => {
-        console.log(data);
-      });
+  async ngOnInit(): Promise<void> {
+    this.context = await this.service.getMain().toPromise();
+
+    const entries = await this.service.getEntries(1, 3, this.context.blogs);
+
+    this.lastEntry = entries[0];
+    this.entries = entries.slice(1);
   }
 }

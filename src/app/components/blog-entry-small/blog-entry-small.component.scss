@@ -1,0 +1,66 @@
+@import 'variables';
+
+$avatarSize: 24px;
+
+.blog-entry-small {
+  background-color: $border;
+  padding: 12px;
+  width: 315px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
+
+  &-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  &-overview {
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+  }
+
+  &-footer {
+    display: grid;
+    grid-template-columns: auto $avatarSize;
+
+    &-note {
+      align-self: end;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    &-avatar {
+      height: $avatarSize;
+      width: $avatarSize;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &::after {
+    content: "";
+    background-color: $border;
+    height: 1px;
+    display: block;
+    bottom: -21px;
+    position: absolute;
+    width: 255px;
+    margin: 0 auto;
+  }
+
+  &.is-first {
+    margin-top: 0;
+  }
+
+  &.is-last {
+    margin-bottom: 0;
+
+    &::after {
+      content: unset;
+    }
+  }
+}

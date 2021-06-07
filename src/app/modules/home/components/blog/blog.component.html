@@ -1,0 +1,26 @@
+<div class="container blog" id="blog">
+  <div class="blog-header" *ngIf="context">
+    <h2>
+      {{ context.title }}
+    </h2>
+    <p>
+      {{ context.description }}
+    </p>
+  </div>
+
+  <div class="blog-last-entry" *ngIf="lastEntry">
+    <h3>
+      {{ lastEntry.title }}
+    </h3>
+    <p>
+      {{ lastEntry.overview }}
+    </p>
+    <div class="blog-last-entry--image">
+      <img [src]="lastEntry.image" [alt]="lastEntry.title">
+    </div>
+  </div>
+
+  <ng-container *ngFor="let entry of entries; let i = index">
+    <ray-blog-entry-small [context]="entry" [isFirst]="i === 0" [isLast]="i === entries.length - 1"></ray-blog-entry-small>
+  </ng-container>
+</div>

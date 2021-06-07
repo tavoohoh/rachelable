@@ -11,8 +11,8 @@ export class AboutMeService extends ServiceClass {
   public get(): Observable<AboutMeModel> {
     const contextPath = '%2Fabout-me.yml';
 
-    return this.service.get(contextPath).pipe(
-      map((data: AboutMeModel) => data as AboutMeModel)
-    );
+    return this.service
+      .get(contextPath)
+      .pipe(map((data: AboutMeModel) => data as AboutMeModel));
   }
 }

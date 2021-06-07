@@ -17,13 +17,9 @@ export class AppService {
   ) {}
 
   public async initApp(): Promise<AppDataModel> {
-    const basicInfo = await this.basicInfoService
-      .get()
-      .toPromise();
+    const basicInfo = await this.basicInfoService.get().toPromise();
 
-    const about = await this.aboutMeService
-      .get()
-      .toPromise();
+    const about = await this.aboutMeService.get().toPromise();
 
     this.appData = {
       basicInfo,

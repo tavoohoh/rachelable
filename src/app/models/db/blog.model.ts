@@ -8,8 +8,10 @@ export class BlogEntryModel {
   image: string;
   title: string;
   overview: string;
-  author: string;
-  authorImage: string;
+  authors: {
+    name: string;
+    avatar: string;
+  }[];
   date: string;
   tags: string[];
   content: string;

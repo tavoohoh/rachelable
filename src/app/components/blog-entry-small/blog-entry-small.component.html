@@ -1,0 +1,17 @@
+<div class="blog-entry-small" [class.is-first]="isFirst" [class.is-last]="isLast">
+  <div class="blog-entry-small-title">
+    {{ context.title }}
+  </div>
+  <div class="blog-entry-small-overview">
+    {{ context.overview }}
+  </div>
+
+  <div class="blog-entry-small-footer">
+    <div class="blog-entry-small-footer-note">
+      {{ context.date | date: 'MMM d, y' }}
+      -
+      {{ context.authors[0].name }}
+    </div>
+    <div class="blog-entry-small-footer-avatar" [style.background-image]="'url(' + context.authors[0].avatar + ')'"></div>
+  </div>
+</div>
