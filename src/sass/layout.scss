@@ -1,5 +1,9 @@
 @import 'variables';
 
+html {
+  font-size: 16px;
+}
+
 html,
 body {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
@@ -16,16 +20,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 18px;
-}
-
-html {
-  font-size: 16px;
-}
-
-@media screen and (max-width: $med) {
-  html {
-    font-size: 26px;
-  }
 }
 
 * {
@@ -50,6 +44,10 @@ p {
 h1 {
   font-size: $fontSize1;
   font-weight: 700;
+
+  @media screen and (max-width: $med) {
+    font-size: $medFontSize1;
+  }
 }
 
 h2 {
@@ -57,18 +55,25 @@ h2 {
   font-weight: 700;
 }
 
-h3 {
+h3,
+h4,
+h5 {
   font-size: $fontSize3;
+
+  @media screen and (max-width: $med) {
+    font-size: $medFontSize3;
+  }
+}
+
+h3 {
   font-weight: 700;
 }
 
 h4 {
-  font-size: $fontSize3;
   font-weight: 600;
 }
 
 h5 {
-  font-size: $fontSize3;
   font-weight: 300;
 }
 
@@ -80,6 +85,10 @@ p, b, strong, li {
 .font-big {
   font-size: $fontSize4;
   font-weight: 300;
+
+  @media screen and (max-width: $med) {
+    font-size: $medFontSize4;
+  }
 }
 
 .font-medium {
@@ -109,9 +118,14 @@ p, b, strong, li {
 }
 
 .inner-html {
+  font-size: $fontSize4;
+  line-height: 1.5;
+
   p {
-    font-size: $fontSize4;
     margin: 30px 0;
-    line-height: 1.4;
+  }
+
+  @media screen and (max-width: $med) {
+    font-size: $medFontSize4;
   }
 }

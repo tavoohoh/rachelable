@@ -1,13 +1,13 @@
+/* screen */
+$sma: 640px;
+$med: 900px;
+
 /* colors */
 $primary: #1A113D;
 $primaryTransparent1: rgba(26, 17, 61, 0.80);
 $secondary: #3B2F5E;
 $alternate: #4F5572;
 $light: #F5F3FA;
-
-/* screen */
-$sma: 640px;
-$med: 900px;
 
 /* effects */
 $transition: 0.3s ease-in-out;
@@ -16,12 +16,21 @@ $opacity: 0.5;
 /* font size */
 $fontSize1: 6rem;
 $fontSize2: 4.5rem;
-$fontSize3: 2.25rem;
+$fontSize3: 2.375rem;
 $fontSize4: 1.5rem;
 $fontSize5: 1.125rem;
 $fontSize6: 1rem;
 $fontSize7: 0.75rem;
 $menuFontSize: 1.125rem;
+
+$medFontSize1: 2.25rem;
+$medFontSize2: 1.5rem;
+$medFontSize3: 1.125rem;
+$medFontSize4: 1rem;
+//$medFontSize5: 1.125rem;
+//$medFontSize6: 1rem;
+//$medFontSize7: 0.75rem;
+$menuFontSize: 1.5rem;
 
 /* gap */
 $gap1: 90px;
