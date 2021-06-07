@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AppDataModel } from '@mod/app-data.model';
-import { ContentService } from '@ser/content.service';
-import { BasicInfoModel } from '@mod/db/basic-info.model';
-import { AboutMeModel } from '@mod/db/about-me.model';
-import { map } from 'rxjs/operators';
+import { BasicInfoService } from '@ser/basic-info.service';
+import { AboutMeService } from '@ser/about-me.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,17 +11,18 @@ export class AppService {
   private $appData: BehaviorSubject<AppDataModel> =
     new BehaviorSubject<AppDataModel>(null);
 
-  constructor(private contentService: ContentService) {}
+  constructor(
+    private basicInfoService: BasicInfoService,
+    private aboutMeService: AboutMeService
+  ) {}
 
   public async initApp(): Promise<AppDataModel> {
-    const basicInfo = await this.contentService
-      .get('%2Fbasic-info.yml?alt=media&token=')
-      .pipe(map((data) => data as BasicInfoModel))
+    const basicInfo = await this.basicInfoService
+      .get()
       .toPromise();
 
-    const about = await this.contentService
-      .get('%2Fabout-me.yml?alt=media&token=')
-      .pipe(map((data) => data as AboutMeModel))
+    const about = await this.aboutMeService
+      .get()
       .toPromise();
 
     this.appData = {

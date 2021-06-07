@@ -12,11 +12,7 @@ export class AboutMeService extends ServiceClass {
     const contextPath = '%2Fabout-me.yml';
 
     return this.service.get(contextPath).pipe(
-      map((data: AboutMeModel) => {
-        data.links = JSON.parse(data.links.toString());
-
-        return data as AboutMeModel;
-      })
+      map((data: AboutMeModel) => data as AboutMeModel)
     );
   }
 }

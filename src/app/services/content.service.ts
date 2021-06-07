@@ -12,7 +12,7 @@ export class ContentService {
   constructor(private http: HttpClient) {}
 
   public get(contextPath: string): Observable<{ [key: string]: any }> {
-    const url = `${environment.urls.content}${contextPath}?alt=media`;
+    const url = `${environment.urls.content}${contextPath}?alt=media&token=`;
     const options: object = {
       responseType: 'application/x-yaml',
     };
