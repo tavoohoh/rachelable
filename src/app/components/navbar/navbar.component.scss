@@ -33,8 +33,8 @@ nav {
   }
 
   .links {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
     gap: 22px;
 
     .link {
@@ -107,8 +107,9 @@ nav.inverted-colors {
     z-index: 999;
 
     .links {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: unset;
+      grid-template-rows: repeat(3, max-content);
       gap: 64px;
       text-align: right;
       height: max-content;
