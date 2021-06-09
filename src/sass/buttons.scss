@@ -5,11 +5,28 @@ button {
   @include cleanButton;
   border-radius: $radius1;
   background-color: $primary;
+  border: 2px solid $primary;
   color: $light;
   font-weight: 600;
   padding: 10px 24px;
   width: max-content;
   font-size: $fontSize6;
+  box-sizing: content-box;
+}
+
+.link-button-clear {
+  background-color: transparent;
+  color: $primary;
+}
+
+.link-button-icon {
+  display: grid;
+  grid-template-columns: auto min-content;
+  gap: 8px;
+
+  span {
+    align-self: center;
+  }
 }
 
 .link-icon {

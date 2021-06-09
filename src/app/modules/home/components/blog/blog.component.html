@@ -21,5 +21,9 @@
 
   <div class="blog-entries">
     <ray-blog-entry-small *ngFor="let entry of entries; let i = index" [context]="entry" [isFirst]="i === 0" [isLast]="i === entries.length - 1"></ray-blog-entry-small>
+    <a class="link-button link-button-clear link-button-icon" routerLink="/blogs">
+      <span>Check out all stories</span>
+      <span class="icon-caret"></span>
+    </a>
   </div>
 </div>

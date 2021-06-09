@@ -10,7 +10,7 @@
     <div class="blog-entry-small-footer-note">
       {{ context.date | date: 'MMM d, y' }}
       -
-      {{ context.authors[0].name }}
+      {{ context.estimatedReadTime() }}
     </div>
     <div class="blog-entry-small-footer-avatar" [style.background-image]="'url(' + context.authors[0].avatar + ')'"></div>
   </div>
