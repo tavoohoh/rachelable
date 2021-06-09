@@ -11,7 +11,7 @@ const COMPONENTS = [
   NavbarComponent,
   LoaderComponent,
   BlogEntrySmallComponent,
-  BlogAuthorCardComponent
+  BlogAuthorCardComponent,
 ];
 
 @NgModule({
