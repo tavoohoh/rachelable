@@ -3,7 +3,7 @@
     <h2>
       {{ context.title }}
     </h2>
-    <p>
+    <p class="font-big">
       {{ context.description }}
     </p>
   </div>
@@ -12,15 +12,13 @@
     <h3>
       {{ lastEntry.title }}
     </h3>
-    <p>
+    <p class="font-big">
       {{ lastEntry.overview }}
     </p>
-    <div class="blog-last-entry--image">
-      <img [src]="lastEntry.image" [alt]="lastEntry.title">
-    </div>
+    <img class="blog-last-entry-image" [src]="lastEntry.image" [alt]="lastEntry.title">
   </div>
 
-  <ng-container *ngFor="let entry of entries; let i = index">
-    <ray-blog-entry-small [context]="entry" [isFirst]="i === 0" [isLast]="i === entries.length - 1"></ray-blog-entry-small>
-  </ng-container>
+  <div class="blog-entries">
+    <ray-blog-entry-small *ngFor="let entry of entries; let i = index" [context]="entry" [isFirst]="i === 0" [isLast]="i === entries.length - 1"></ray-blog-entry-small>
+  </div>
 </div>

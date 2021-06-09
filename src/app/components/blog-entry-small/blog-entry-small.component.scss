@@ -10,10 +10,18 @@ $avatarSize: 24px;
   margin-bottom: 40px;
   position: relative;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &-title {
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 12px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &-overview {
