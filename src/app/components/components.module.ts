@@ -5,8 +5,14 @@ import { RouterModule } from '@angular/router';
 import { LoaderComponent } from '@com/loader/loader.component';
 import { FooterComponent } from '@com/footer/footer.component';
 import { BlogEntrySmallComponent } from '@com/blog-entry-small/blog-entry-small.component';
+import { BlogAuthorCardComponent } from '@com/blog-author-card/blog-author-card.component';
 
-const COMPONENTS = [NavbarComponent, LoaderComponent, BlogEntrySmallComponent];
+const COMPONENTS = [
+  NavbarComponent,
+  LoaderComponent,
+  BlogEntrySmallComponent,
+  BlogAuthorCardComponent
+];
 
 @NgModule({
   declarations: [...COMPONENTS, FooterComponent],

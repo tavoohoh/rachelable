@@ -1,0 +1,29 @@
+@import 'variables';
+
+$avatarSize: 42px;
+
+.blog-author-card {
+  display: grid;
+  grid-template-columns: $avatarSize auto;
+  gap: 12px;
+
+  &-avatar {
+    height: $avatarSize;
+    width: $avatarSize;
+    border-radius: 50%;
+  }
+
+  &-note {
+    align-self: center;
+
+    &-top {
+      font-weight: 600;
+      font-size: $fontSize7;
+      margin-bottom: 2px;
+    }
+
+    &-bottom {
+      font-size: $fontSize7;
+    }
+  }
+}

@@ -16,6 +16,7 @@
       {{ lastEntry.overview }}
     </p>
     <img class="blog-last-entry-image" [src]="lastEntry.image" [alt]="lastEntry.title">
+    <ray-blog-author-card [author]="lastEntry.authors[0]" [date]="lastEntry.date" [estimatedReadTime]="lastEntry.estimatedReadTime()"></ray-blog-author-card>
   </div>
 
   <div class="blog-entries">

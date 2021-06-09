@@ -23,6 +23,11 @@
 
     h3 {
       margin-bottom: 10px;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     p {
@@ -33,6 +38,8 @@
       width: 100%;
       height: 280px;
       object-fit: cover;
+      margin-bottom: 20px;
+      cursor: pointer;
     }
   }
 

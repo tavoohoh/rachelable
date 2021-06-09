@@ -37,7 +37,8 @@ export class BlogService extends ServiceClass {
 
     await Promise.all(
       links.map(async (link) => {
-        const entry = await this.getEntry(link).toPromise();
+        const entryData = await this.getEntry(link).toPromise();
+        const entry = new BlogEntryModel(entryData);
 
         entries.push(entry);
       })

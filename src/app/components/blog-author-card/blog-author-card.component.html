@@ -1,0 +1,13 @@
+<div class="blog-author-card">
+  <div class="blog-author-card-avatar" [style.background-image]="'url(' + author.avatar + ')'"></div>
+  <div class="blog-author-card-note">
+    <div class="blog-author-card-note-top">
+      {{ author.name }}
+    </div>
+    <div class="blog-author-card-note-bottom">
+      {{ date | date: 'MMM d, y' }}
+      -
+      {{ estimatedReadTime }}
+    </div>
+  </div>
+</div>
