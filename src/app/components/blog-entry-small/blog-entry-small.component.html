@@ -1,7 +1,12 @@
 <div class="blog-entry-small" [class.is-first]="isFirst" [class.is-last]="isLast">
+  <div class="blog-entry-small-image" *ngIf="showImage && context.image">
+    <img [src]="context.image" [alt]="">
+  </div>
+
   <div class="blog-entry-small-title">
     {{ context.title }}
   </div>
+
   <div class="blog-entry-small-overview">
     {{ context.overview }}
   </div>

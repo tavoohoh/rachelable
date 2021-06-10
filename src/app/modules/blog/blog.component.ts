@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '@app/app.service';
 import { MetaDataService } from '@ser/metatag.service';
 import { PageName } from '@mod/meta-data.model';
 import { BlogService } from '@ser/blog.service';
-import { BlogEntryModel, BlogModel } from '@mod/db/blog.model';
+import {
+  BlogEntriesProgress,
+  BlogModel,
+} from '@mod/db/blog.model';
 
 @Component({
   selector: 'ray-blog',
@@ -12,7 +14,7 @@ import { BlogEntryModel, BlogModel } from '@mod/db/blog.model';
 })
 export class BlogComponent implements OnInit {
   public context: BlogModel;
-  public entries: BlogEntryModel[];
+  public entries: BlogEntriesProgress;
 
   constructor(
     private service: BlogService,
@@ -23,7 +25,14 @@ export class BlogComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.context = await this.service.getMain().toPromise();
-    this.entries = await this.service.getEntries(1, 3, this.context.blogs);
+    this.entries = await this.service.getEntriesWithProgress(
+      this.context.blogs
+    );
+
+    this.entries.inProgress.push(this.entries.toRead[2]);
+    this.entries.inProgress.push(this.entries.toRead[0]);
+    this.entries.done.push(this.entries.toRead[1]);
+    this.entries.done.push(this.entries.toRead[2]);
   }
 
 }

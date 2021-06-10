@@ -2,4 +2,30 @@
 
 <div class="container blog-page">
   <ray-blog-header *ngIf="context" [headerTitle]="context.title" [headerDescription]="context.description"></ray-blog-header>
+
+  <div class="blog-page-entries" *ngIf="entries">
+    <div class="blog-page-entries-list">
+      <h4>To Read</h4>
+      <ray-blog-entry-small *ngFor="let entry of entries.toRead; let i = index"
+                            [showImage]="true"
+                            [context]="entry"
+                            [isLast]="i === entries.toRead.length - 1"></ray-blog-entry-small>
+    </div>
+
+    <div class="blog-page-entries-list">
+      <h4>In Progress</h4>
+      <ray-blog-entry-small *ngFor="let entry of entries.inProgress; let i = index"
+                            [showImage]="true"
+                            [context]="entry"
+                            [isLast]="i === entries.inProgress.length - 1"></ray-blog-entry-small>
+    </div>
+
+    <div class="blog-page-entries-list">
+      <h4>Done</h4>
+      <ray-blog-entry-small *ngFor="let entry of entries.done; let i = index"
+                            [showImage]="true"
+                            [context]="entry"
+                            [isLast]="i === entries.done.length - 1"></ray-blog-entry-small>
+    </div>
+  </div>
 </div>

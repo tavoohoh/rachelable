@@ -3,7 +3,12 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ServiceClass } from '@app/classes/service.class';
 import { BasicInfoModel } from '@mod/db/basic-info.model';
-import { BlogEntryModel, BlogModel } from '@mod/db/blog.model';
+import {
+  BlogEntriesProgress,
+  BlogEntryModel,
+  BlogModel,
+} from '@mod/db/blog.model';
+import { BlogEntryStatusEnum } from '@enu/blog-entry-status.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -41,6 +46,37 @@ export class BlogService extends ServiceClass {
         const entry = new BlogEntryModel(entryData);
 
         entries.push(entry);
+      })
+    );
+
+    return entries;
+  }
+
+  public async getEntriesWithProgress(
+    links: string[]
+  ): Promise<BlogEntriesProgress> {
+    const entries: BlogEntriesProgress = {
+      toRead: [],
+      inProgress: [],
+      done: []
+    };
+
+    await Promise.all(
+      links.map(async (link) => {
+        const entryData = await this.getEntry(link).toPromise();
+        const entry = new BlogEntryModel(entryData);
+
+        switch (entry.status) {
+          case BlogEntryStatusEnum.TO_READ:
+            entries.toRead.push(entry);
+            break;
+          case BlogEntryStatusEnum.IN_PROGRESS:
+            entries.inProgress.push(entry);
+            break;
+          case BlogEntryStatusEnum.DONE:
+            entries.done.push(entry);
+            break;
+        }
       })
     );
 

@@ -10,6 +10,7 @@ export class BlogEntrySmallComponent implements OnInit {
   @Input() public context: BlogEntryModel;
   @Input() public isLast: boolean;
   @Input() public isFirst: boolean;
+  @Input() public showImage: boolean;
 
   ngOnInit(): void {
     if (this.context.title.length > 56) {
