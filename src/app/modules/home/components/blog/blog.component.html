@@ -1,12 +1,5 @@
 <div class="container blog" id="blog">
-  <div class="blog-header" *ngIf="context">
-    <h2>
-      {{ context.title }}
-    </h2>
-    <p class="font-big">
-      {{ context.description }}
-    </p>
-  </div>
+  <ray-blog-header [headerTitle]="context.title" [headerDescription]="context.description" *ngIf="context"></ray-blog-header>
 
   <div class="blog-last-entry" *ngIf="lastEntry">
     <h3>

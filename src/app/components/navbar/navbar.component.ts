@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavigationArrayModel } from '@mod/navigation.model';
 
 @Component({
@@ -7,8 +7,8 @@ import { NavigationArrayModel } from '@mod/navigation.model';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
+  @Input() public invertedColors: boolean;
   public openMenu = false;
-  public invertedColors: boolean;
   public links: NavigationArrayModel = [
     {
       path: '',
@@ -20,10 +20,10 @@ export class NavbarComponent {
       fragment: 'about_me',
       disableActiveState: true,
     },
-    // {
-    //   path: '/blog',
-    //   text: 'Blog',
-    // },
+    {
+      path: '/blog',
+      text: 'Blog',
+    },
     // {
     //   path: '/portfolio',
     //   text: 'Portfolio',

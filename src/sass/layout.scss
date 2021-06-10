@@ -121,6 +121,7 @@ p, b, strong, li {
   max-width: 1195px;
   margin: 0 auto;
   padding: 90px;
+  min-height: calc(100vh - 279px);
 
   @media screen and (max-width: $med) {
     padding: 30px;
