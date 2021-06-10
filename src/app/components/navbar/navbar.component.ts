@@ -11,11 +11,11 @@ export class NavbarComponent {
   public openMenu = false;
   public links: NavigationArrayModel = [
     {
-      path: '',
+      path: '/home',
       text: 'Home',
     },
     {
-      path: '',
+      path: '/home',
       text: 'About Me',
       fragment: 'about_me',
       disableActiveState: true,
@@ -29,7 +29,7 @@ export class NavbarComponent {
     //   text: 'Portfolio',
     // },
     {
-      path: '',
+      path: '/home',
       text: 'Contact',
       fragment: 'contact',
       disableActiveState: true,

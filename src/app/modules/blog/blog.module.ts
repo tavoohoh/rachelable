@@ -16,7 +16,7 @@ const routes: Routes = [
   declarations: [BlogComponent, EntryBlogComponent],
   imports: [
     ComponentsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forChild(routes),
     CommonModule,
   ],
 })
