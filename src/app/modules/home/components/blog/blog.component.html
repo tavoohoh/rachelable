@@ -1,20 +1,20 @@
 <div class="container blog" id="blog">
   <ray-blog-header [headerTitle]="context.title" [headerDescription]="context.description" *ngIf="context"></ray-blog-header>
 
-  <div class="blog-last-entry" *ngIf="lastEntry">
+  <a class="blog-last-entry" *ngIf="lastEntry" routerLink="/blog/{{ lastEntry?.title }}">
     <h3>
       {{ lastEntry.title }}
     </h3>
     <p class="font-big">
       {{ lastEntry.overview }}
     </p>
-    <img class="blog-last-entry-image" [src]="lastEntry.image" [alt]="lastEntry.title">
+    <img class="blog-last-entry-image" *ngIf="lastEntry.image" [src]="lastEntry.image" [alt]="lastEntry.title">
     <ray-blog-author-card [author]="lastEntry.authors[0]" [date]="lastEntry.date" [estimatedReadTime]="lastEntry.estimatedReadTime()"></ray-blog-author-card>
-  </div>
+  </a>
 
   <div class="blog-entries">
     <ray-blog-entry-small *ngFor="let entry of entries; let i = index" [context]="entry" [isFirst]="i === 0" [isLast]="i === entries.length - 1"></ray-blog-entry-small>
-    <a class="link-button link-button-clear link-button-icon" routerLink="/blogs">
+    <a class="link-button link-button-clear link-button-icon" routerLink="/blog">
       <span>Check out all stories</span>
       <span class="icon-caret"></span>
     </a>

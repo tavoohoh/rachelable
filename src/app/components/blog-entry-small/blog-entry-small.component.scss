@@ -3,6 +3,9 @@
 $avatarSize: 24px;
 
 .blog-entry-small {
+  @include cleanButton();
+  display: block;
+  color: $primary;
   background-color: $border;
   padding: 12px;
   width: 315px;

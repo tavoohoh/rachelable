@@ -3,7 +3,7 @@ export enum PageName {
   ABOUT_ME = 'ABOUT_ME',
   CONTACT = 'CONTACT',
   PORTFOLIO = 'PORTFOLIO',
-  BLOG = 'BLOG',
+  BLOG = 'BLOG'
 }
 
 export interface MetaData {

@@ -11,6 +11,8 @@
   }
 
   &-last-entry {
+    @include cleanButton();
+    color: $primary;
     grid-column: 1;
     grid-row: 2;
     max-width: 600px;

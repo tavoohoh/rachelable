@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
-import { EntryBlogComponent } from '@app/modules/blog/components/entry/entry.component';
-import { BlogComponent } from '@app/modules/blog/blog.component';
+import { CommonModule } from '@angular/common';
+
+import { BlogMainComponent } from '@app/modules/blog/pages/main/main.component';
 import { ComponentsModule } from '@com/components.module';
 import { RouterModule, Routes } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { BlogEntryComponent } from '@app/modules/blog/pages/entry/main.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: BlogComponent,
+    component: BlogMainComponent,
   },
+  {
+    path: ':id',
+    component: BlogEntryComponent
+  }
 ];
 
 @NgModule({
-  declarations: [BlogComponent, EntryBlogComponent],
+  declarations: [BlogMainComponent, BlogEntryComponent],
   imports: [
     ComponentsModule,
     RouterModule.forChild(routes),

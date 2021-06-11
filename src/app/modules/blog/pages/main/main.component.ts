@@ -9,10 +9,10 @@ import {
 
 @Component({
   selector: 'ray-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss'],
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss'],
 })
-export class BlogComponent implements OnInit {
+export class BlogMainComponent implements OnInit {
   public context: BlogModel;
   public entries: BlogEntriesProgress;
 
