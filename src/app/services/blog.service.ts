@@ -58,7 +58,7 @@ export class BlogService extends ServiceClass {
     const entries: BlogEntriesProgress = {
       toRead: [],
       inProgress: [],
-      done: []
+      done: [],
     };
 
     await Promise.all(

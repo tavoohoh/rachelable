@@ -13,16 +13,12 @@ const routes: Routes = [
   },
   {
     path: ':id',
-    component: BlogEntryComponent
-  }
+    component: BlogEntryComponent,
+  },
 ];
 
 @NgModule({
   declarations: [BlogMainComponent, BlogEntryComponent],
-  imports: [
-    ComponentsModule,
-    RouterModule.forChild(routes),
-    CommonModule,
-  ],
+  imports: [ComponentsModule, RouterModule.forChild(routes), CommonModule],
 })
 export class BlogModule {}

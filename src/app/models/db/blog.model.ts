@@ -59,7 +59,7 @@ export class BlogEntryModel {
 
   private setStatus(): void {
     const localEntries = BlogEntryModel.getLocalEntries();
-    const matchedEntry = localEntries.filter(e => e.id === this.id);
+    const matchedEntry = localEntries.filter((e) => e.id === this.id);
 
     if (matchedEntry.length > 0) {
       this.status = matchedEntry[0].status;
@@ -69,14 +69,14 @@ export class BlogEntryModel {
   public updateStatus(status: BlogEntryStatusEnum): void {
     this.status = status;
     const localEntries = BlogEntryModel.getLocalEntries();
-    const entryIndex = localEntries.findIndex(e => e.id === this.id);
+    const entryIndex = localEntries.findIndex((e) => e.id === this.id);
 
     if (entryIndex) {
       localEntries[entryIndex].status = status;
     } else {
       localEntries.push({
         id: this.title,
-        status
+        status,
       });
     }
 

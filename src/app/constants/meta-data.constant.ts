@@ -9,20 +9,20 @@ export const META_DATA_CONSTANT: { [key: string]: MetaData } = {
     type: '',
     title: 'Rachel Mata - Home',
     description: 'Lead Project Manager with 6 years of experience',
-    image: ''
+    image: '',
   },
   [PageName.PORTFOLIO]: {
     url: `${environment.urls.app}/portfolio`,
     type: '',
     title: 'Rachel Mata - Portfolio',
     description: '',
-    image: ''
+    image: '',
   },
   [PageName.BLOG]: {
     url: `${environment.urls.app}/blog`,
     type: '',
     title: 'Rachel Mata - Blog',
     description: '',
-    image: ''
+    image: '',
   },
 };

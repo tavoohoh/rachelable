@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MetaDataService } from '@ser/metatag.service';
 import { PageName } from '@mod/meta-data.model';
 import { BlogService } from '@ser/blog.service';
-import {
-  BlogEntriesProgress,
-  BlogModel,
-} from '@mod/db/blog.model';
+import { BlogEntriesProgress, BlogModel } from '@mod/db/blog.model';
 
 @Component({
   selector: 'ray-blog',
@@ -34,5 +31,4 @@ export class BlogMainComponent implements OnInit {
     this.entries.done.push(this.entries.toRead[1]);
     this.entries.done.push(this.entries.toRead[2]);
   }
-
 }

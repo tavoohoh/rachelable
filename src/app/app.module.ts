@@ -23,7 +23,7 @@ const routes: Routes = [
     path: 'blog',
     loadChildren: () =>
       import('./modules/blog/blog.module').then((m) => m.BlogModule),
-  }
+  },
 ];
 
 @NgModule({

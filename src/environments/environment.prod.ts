@@ -5,6 +5,6 @@ export const environment = {
   production: false,
   urls: {
     content: `${storageUrl}/content`,
-    app: 'https://rachelable.com'
+    app: 'https://rachelable.com',
   },
 };
