@@ -9,8 +9,8 @@ $avatarSize: 24px;
   background-color: $border;
   padding: 12px;
   width: 315px;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: $gap3;
+  margin-bottom: $gap2;
   position: relative;
 
   &:hover {

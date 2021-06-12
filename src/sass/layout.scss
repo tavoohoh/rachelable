@@ -43,7 +43,8 @@ p {
   line-height: 1.4;
 }
 
-h1 {
+h1,
+title {
   font-size: $fontSize1;
   font-weight: 700;
 
@@ -52,7 +53,8 @@ h1 {
   }
 }
 
-h2 {
+h2,
+.subtitle {
   font-size: $fontSize2;
   font-weight: 700;
 
@@ -63,7 +65,8 @@ h2 {
 
 h3,
 h4,
-h5 {
+h5,
+.main-title {
   font-size: $fontSize3;
 
   @media screen and (max-width: $med) {
@@ -121,7 +124,7 @@ p, b, strong, li {
   max-width: 1195px;
   margin: 0 auto;
   padding: 90px;
-  min-height: calc(100vh - 279px);
+  min-height: calc(100vh - #{$footerSize});
 
   @media screen and (max-width: $med) {
     padding: 30px;

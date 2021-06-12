@@ -7,6 +7,7 @@ import { FooterComponent } from '@com/footer/footer.component';
 import { BlogEntrySmallComponent } from '@com/blog-entry-small/blog-entry-small.component';
 import { BlogAuthorCardComponent } from '@com/blog-author-card/blog-author-card.component';
 import { BlogHeaderComponent } from '@com/blog-header/blog-header.component';
+import { ShareLinksComponent } from '@com/share-links/share-links.component';
 
 const COMPONENTS = [
   NavbarComponent,
@@ -14,6 +15,7 @@ const COMPONENTS = [
   BlogHeaderComponent,
   BlogEntrySmallComponent,
   BlogAuthorCardComponent,
+  ShareLinksComponent
 ];
 
 @NgModule({

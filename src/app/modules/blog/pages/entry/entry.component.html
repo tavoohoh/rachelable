@@ -1,5 +1,33 @@
 <ray-navbar [invertedColors]="true"></ray-navbar>
 
-<div class="container blog-entry-page">
+<div class="blog-entry-page" *ngIf="entry">
+  <!-- left column -->
+  <div class="blog-entry-page-actions">
+    <div class="blog-entry-page-actions-action">
+      <ray-share-links [url]="entryUrl" [title]="entry.title" [vertical]="true"></ray-share-links>
+    </div>
+  </div>
 
+  <!-- center column -->
+  <div class="blog-entry-page-content">
+    <h1 class="main-title">{{ entry.title }}</h1>
+
+    <p class="font-big">
+      {{ entry.overview }}
+    </p>
+
+    <ray-share-links [url]="entryUrl" [title]="entry.title"></ray-share-links>
+
+    <ray-blog-author-card
+      [author]="entry.authors[0]"
+      [date]="entry.date"
+      [estimatedReadTime]="entry.estimatedReadTime()"></ray-blog-author-card>
+
+    <img class="blog-entry-page-content-cover" *ngIf="entry.image" [src]="entry.image" [alt]="entry.title">
+
+    <div class="entry-inner-html" [innerHTML]="entry.content"></div>
+  </div>
+
+  <!-- right column -->
+  <div class="blog-entry-page-other-entries"></div>
 </div>

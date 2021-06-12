@@ -1,25 +1,65 @@
-.blog-page {
+@import 'variables';
+
+.blog-entry-page {
   padding-top: 200px;
+  display: grid;
+  grid-template-columns: auto 800px auto;
+  min-height: calc(100vh - #{$footerSize});
+  margin: 0 auto;
+  gap: $gap3;
+
+  @media screen and (max-width: $med) {
+    padding: 110px 30px 30px;
+  }
+
+  &-actions {
+    margin-left: auto;
+    position: relative;
+
+    &-action {
+      position: fixed;
+      bottom: $footerSize;
+    }
+  }
+
+  &-content {
+    padding: 0 $gap3;
+
+    h1 {
+      line-height: 1.2;
+    }
+
+    h1,
+    .font-big,
+    ray-share-links,
+    ray-blog-author-card {
+      display: block;
+      margin-bottom: $gap3;
+    }
+
+    &-cover {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
 
   &-entries {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    margin-right: auto;
+  }
+}
 
-    &-list {
-      width: 315px;
+.entry-inner-html ::ng-deep {
+  margin: $gap3 0;
+  font-size: 1rem;
+  line-height: 1.5;
 
-      &:nth-child(1) {
-        margin-right: auto;
-      }
+  h1, h2 {
+    font-size: 1.8rem;
+    margin: 16px 0;
+  }
 
-      &:nth-child(2) {
-        margin: 0 auto;
-      }
-
-      &:nth-child(3) {
-        margin-left: auto;
-      }
-    }
+  h3 {
+    font-size: 1.3rem;
+    margin: 12px 0;
   }
 }

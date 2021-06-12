@@ -1,0 +1,28 @@
+@import 'variables';
+
+$gridRepeat: repeat(4, 24px);
+
+.share-links {
+  display: grid;
+  grid-template-columns: $gridRepeat;
+  gap: 6px;
+  margin-bottom: $gap3;
+  width: min-content;
+
+  button {
+    @include cleanButton();
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+
+    span {
+      color: $primary;
+      margin: 0 auto;
+    }
+  }
+
+  &.vertical {
+    grid-template-columns: unset;
+    grid-template-rows: $gridRepeat;
+  }
+}

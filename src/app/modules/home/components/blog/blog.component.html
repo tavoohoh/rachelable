@@ -1,7 +1,7 @@
 <div class="container blog" id="blog">
   <ray-blog-header [headerTitle]="context.title" [headerDescription]="context.description" *ngIf="context"></ray-blog-header>
 
-  <a class="blog-last-entry" *ngIf="lastEntry" routerLink="/blog/{{ lastEntry?.title }}">
+  <a class="blog-last-entry" *ngIf="lastEntry" routerLink="/blog/{{ lastEntry?.id }}">
     <h3>
       {{ lastEntry.title }}
     </h3>

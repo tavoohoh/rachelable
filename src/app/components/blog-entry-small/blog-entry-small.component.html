@@ -1,4 +1,4 @@
-<a class="blog-entry-small" [class.is-first]="isFirst" [class.is-last]="isLast" routerLink="/blog/{{ context?.title }}">
+<a class="blog-entry-small" [class.is-first]="isFirst" [class.is-last]="isLast" routerLink="/blog/{{ context?.id }}">
   <div class="blog-entry-small-image" *ngIf="showImage && context.image">
     <img [src]="context.image" [alt]="">
   </div>

@@ -3,6 +3,7 @@ import { MetaDataService } from '@ser/metatag.service';
 import { BlogService } from '@ser/blog.service';
 import { BlogEntryModel } from '@mod/db/blog.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'ray-blog',
@@ -11,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BlogEntryComponent implements OnInit {
   public entry: BlogEntryModel;
+  public entryUrl: string;
 
   constructor(
     private service: BlogService,
@@ -21,12 +23,14 @@ export class BlogEntryComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     const id = this.route.snapshot.paramMap.get('id');
-    this.entry = await this.service.getEntry(id).toPromise();
+    const entry = await this.service.getEntry(id).toPromise();
 
-    if (!this.entry) {
+    if (!entry) {
       await this.router.navigateByUrl('404');
     }
 
+    this.entryUrl = `${environment.urls.app}/blog/${id}`;
+    this.entry = new BlogEntryModel(entry);
     this.metaDataService.setCustomMetaData(
       this.entry.title,
       this.entry.overview

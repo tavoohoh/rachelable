@@ -1,0 +1,5 @@
+<div class="share-links" [class.vertical]="vertical">
+  <button *ngFor="let l of links" (click)="share(l.link)">
+      <span class="icon-{{ l.icon }}"></span>
+  </button>
+</div>
