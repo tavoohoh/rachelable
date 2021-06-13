@@ -52,6 +52,26 @@ export class BlogEntryComponent extends BlogPageClass {
     );
 
     this.initSideContentTop();
+    this.excludeCurrentEntryFromContext();
+    // loading false
+  }
+
+  private excludeCurrentEntryFromContext(): void {
+    let entryIndex = this.context.entries.toRead.findIndex(
+      (o) => o.id === this.entry.id
+    );
+
+    if (this.context.entries.toRead[entryIndex]) {
+      this.context.entries.toRead.splice(entryIndex, 1);
+    } else {
+      entryIndex = this.context.entries.inProgress.findIndex(
+        (o) => o.id === this.entry.id
+      );
+
+      if (this.context.entries.inProgress[entryIndex]) {
+        this.context.entries.inProgress.splice(entryIndex, 1);
+      }
+    }
   }
 
   private initSideContentTop(): void {
