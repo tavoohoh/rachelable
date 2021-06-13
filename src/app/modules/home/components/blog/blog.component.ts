@@ -1,23 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { BlogEntryModel, BlogModel } from '@mod/db/blog.model';
-import { BlogService } from '@ser/blog.service';
+import { Component } from '@angular/core';
+import { BlogEntryModel } from '@mod/db/blog.model';
+import { BlogPageClass } from '@app/classes/blog-page.class';
 
 @Component({
   selector: 'ray-home-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
 })
-export class BlogHomeComponent implements OnInit {
-  public context: BlogModel;
+export class BlogHomeComponent extends BlogPageClass {
   public entries: BlogEntryModel[];
   public lastEntry: BlogEntryModel;
 
-  constructor(private service: BlogService) {}
+  async onInit(): Promise<void> {
+    this.context = await this.service.getContext();
 
-  async ngOnInit(): Promise<void> {
-    this.context = await this.service.getMain().toPromise();
-
-    const entries = await this.service.getEntries(1, 3, this.context.blogs);
+    const entries = this.context.entries.toRead;
 
     this.lastEntry = entries[0];
     this.entries = entries.slice(1);

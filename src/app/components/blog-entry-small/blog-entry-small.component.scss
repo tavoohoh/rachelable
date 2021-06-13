@@ -30,6 +30,7 @@ $avatarSize: 24px;
   &-title {
     font-weight: 600;
     font-size: 1rem;
+    line-height: 1.15;
     margin-bottom: 12px;
 
     &:hover {
@@ -82,6 +83,31 @@ $avatarSize: 24px;
 
     &::after {
       content: unset;
+    }
+  }
+}
+
+.blog-entry-small.is-extra-small {
+  padding: 5px 8px;
+  width: 190px;
+
+  .blog-entry-small-title {
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+  }
+
+  .blog-entry-small-overview {
+    font-size: 0.625rem;
+  }
+
+  .blog-entry-small-footer {
+
+    &-note {
+      font-size: 0.625rem;
+    }
+
+    &-avatar {
+      display: none;
     }
   }
 }

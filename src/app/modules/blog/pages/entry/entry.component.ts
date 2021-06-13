@@ -1,27 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { MetaDataService } from '@ser/metatag.service';
 import { BlogService } from '@ser/blog.service';
 import { BlogEntryModel } from '@mod/db/blog.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
+import { BlogPageClass } from '@app/classes/blog-page.class';
 
 @Component({
   selector: 'ray-blog',
   templateUrl: './entry.component.html',
   styleUrls: ['./entry.component.scss'],
 })
-export class BlogEntryComponent implements OnInit {
+export class BlogEntryComponent extends BlogPageClass {
+  @ViewChild('blogEntryCover', { static: false }) blogEntryCover: ElementRef;
+
+  private sideContentTop = 0;
   public entry: BlogEntryModel;
   public entryUrl: string;
+  public sideDisplay: boolean;
 
   constructor(
-    private service: BlogService,
+    public service: BlogService,
     private route: ActivatedRoute,
     private router: Router,
     readonly metaDataService: MetaDataService
-  ) {}
+  ) {
+    super(service);
+  }
 
-  async ngOnInit(): Promise<void> {
+  @HostListener('window:scroll', ['$event'])
+  onScroll(): void {
+    if (this.sideContentTop) {
+      this.sideDisplay = window.pageYOffset > this.sideContentTop;
+    }
+  }
+
+  async onInit(): Promise<void> {
     const id = this.route.snapshot.paramMap.get('id');
     const entry = await this.service.getEntry(id).toPromise();
 
@@ -35,5 +49,16 @@ export class BlogEntryComponent implements OnInit {
       this.entry.title,
       this.entry.overview
     );
+
+    this.initSideContentTop();
+  }
+
+  private initSideContentTop(): void {
+    if (this.blogEntryCover) {
+      const bound = this.blogEntryCover.nativeElement.getBoundingClientRect();
+      this.sideContentTop = bound.top;
+    } else {
+      setTimeout(() => this.initSideContentTop(), 300);
+    }
   }
 }

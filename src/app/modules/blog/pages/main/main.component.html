@@ -1,7 +1,7 @@
 <ray-navbar [invertedColors]="true"></ray-navbar>
 
 <div class="container blog-page">
-  <ray-blog-header *ngIf="context" [headerTitle]="context.title" [headerDescription]="context.description"></ray-blog-header>
+  <ray-blog-header *ngIf="context" [headerTitle]="context.main.title" [headerDescription]="context.main.description"></ray-blog-header>
 
   <div class="blog-page-entries" *ngIf="entries">
     <div class="blog-page-entries-list">

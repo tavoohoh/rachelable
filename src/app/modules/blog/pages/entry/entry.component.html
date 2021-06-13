@@ -1,9 +1,9 @@
 <ray-navbar [invertedColors]="true"></ray-navbar>
 
-<div class="blog-entry-page" *ngIf="entry">
+<div class="blog-entry-page" *ngIf="context && entry">
   <!-- left column -->
-  <div class="blog-entry-page-actions">
-    <div class="blog-entry-page-actions-action">
+  <div class="blog-entry-page-left" [class.blog-entry-page-opacity]="sideDisplay">
+    <div class="blog-entry-page-left-content">
       <ray-share-links [url]="entryUrl" [title]="entry.title" [vertical]="true"></ray-share-links>
     </div>
   </div>
@@ -23,11 +23,21 @@
       [date]="entry.date"
       [estimatedReadTime]="entry.estimatedReadTime()"></ray-blog-author-card>
 
-    <img class="blog-entry-page-content-cover" *ngIf="entry.image" [src]="entry.image" [alt]="entry.title">
+    <img class="blog-entry-page-content-cover" *ngIf="entry.image" [src]="entry.image" [alt]="entry.title" #blogEntryCover>
 
     <div class="entry-inner-html" [innerHTML]="entry.content"></div>
+
+    <div class="blog-entry-page-content-tags">
+      <span *ngFor="let tag of entry.tags">
+        {{ tag }}
+      </span>
+    </div>
   </div>
 
   <!-- right column -->
-  <div class="blog-entry-page-other-entries"></div>
+  <div class="blog-entry-page-right" [class.blog-entry-page-opacity]="sideDisplay">
+    <div class="blog-entry-page-right-content">
+      <ray-blog-entry-small *ngFor="let entry of context.entries.toRead; let i = index" [context]="entry" [isFirst]="i === 0" [isLast]="i === context.entries.toRead.length - 1" [isExtraSmall]="true"></ray-blog-entry-small>
+    </div>
+  </div>
 </div>

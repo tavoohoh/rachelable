@@ -12,18 +12,27 @@
     padding: 110px 30px 30px;
   }
 
-  &-actions {
-    margin-left: auto;
+  &-right,
+  &-left {
     position: relative;
+    opacity: 0;
+    transition: opacity ease-in-out .5s;
 
-    &-action {
+    &-content {
       position: fixed;
-      bottom: $footerSize;
     }
   }
 
+  &-left {
+    margin-left: auto;
+  }
+
+  &-right {
+    margin-right: auto;
+  }
+
   &-content {
-    padding: 0 $gap3;
+    padding-left: $gap3;
 
     h1 {
       line-height: 1.2;
@@ -41,6 +50,19 @@
       object-fit: cover;
       width: 100%;
     }
+
+    &-tags {
+      display: flex;
+
+      span {
+        background-color: $border;
+        padding: 8px 12px;
+        font-size: 1rem;
+        margin-right: $gap4;
+      }
+
+      margin: $gap2 0;
+    }
   }
 
   &-entries {
@@ -50,7 +72,7 @@
 
 .entry-inner-html ::ng-deep {
   margin: $gap3 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.5;
 
   h1, h2 {
@@ -59,7 +81,11 @@
   }
 
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 12px 0;
   }
+}
+
+.blog-entry-page-opacity {
+  opacity: 1;
 }

@@ -89,3 +89,8 @@ export class BlogEntriesProgress {
   inProgress: BlogEntryModel[];
   done: BlogEntryModel[];
 }
+
+export class BlogContext {
+  main: BlogModel;
+  entries: BlogEntriesProgress;
+}
