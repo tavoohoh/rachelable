@@ -29,6 +29,17 @@
 
   &-right {
     margin-right: auto;
+
+    &-content {
+      &-list {
+        h4 {
+          font-size: 0.875rem;
+          margin-bottom: $gap4;
+        }
+
+        margin-bottom: $gap3;
+      }
+    }
   }
 
   &-content {

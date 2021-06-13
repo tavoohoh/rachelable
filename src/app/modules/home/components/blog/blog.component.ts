@@ -14,7 +14,11 @@ export class BlogHomeComponent extends BlogPageClass {
   async onInit(): Promise<void> {
     this.context = await this.service.getContext();
 
-    const entries = this.context.entries.toRead;
+    const entries = [
+      ...this.context.entries.toRead,
+      ...this.context.entries.inProgress,
+      ...this.context.entries.done
+    ];
 
     this.lastEntry = entries[0];
     this.entries = entries.slice(1);

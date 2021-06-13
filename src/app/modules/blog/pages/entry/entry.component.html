@@ -37,7 +37,15 @@
   <!-- right column -->
   <div class="blog-entry-page-right" [class.blog-entry-page-opacity]="sideDisplay">
     <div class="blog-entry-page-right-content">
-      <ray-blog-entry-small *ngFor="let entry of context.entries.toRead; let i = index" [context]="entry" [isFirst]="i === 0" [isLast]="i === context.entries.toRead.length - 1" [isExtraSmall]="true"></ray-blog-entry-small>
+      <div class="blog-entry-page-right-content-list">
+        <h4>To read</h4>
+        <ray-blog-entry-small *ngFor="let entry of context.entries.toRead; let i = index" [context]="entry" [isFirst]="i === 0" [isLast]="i === context.entries.toRead.length - 1" [isExtraSmall]="true"></ray-blog-entry-small>
+      </div>
+
+      <div class="blog-entry-page-right-content-list">
+        <h4>In Progress</h4>
+        <ray-blog-entry-small *ngFor="let entry of context.entries.inProgress; let i = index" [context]="entry" [isFirst]="i === 0" [isLast]="i === context.entries.toRead.length - 1" [isExtraSmall]="true"></ray-blog-entry-small>
+      </div>
     </div>
   </div>
 </div>
