@@ -8,6 +8,7 @@ import { BlogEntrySmallComponent } from '@com/blog-entry-small/blog-entry-small.
 import { BlogAuthorCardComponent } from '@com/blog-author-card/blog-author-card.component';
 import { BlogHeaderComponent } from '@com/blog-header/blog-header.component';
 import { ShareLinksComponent } from '@com/share-links/share-links.component';
+import { ImageComponent } from '@com/image/image.component';
 
 const COMPONENTS = [
   NavbarComponent,
@@ -16,6 +17,7 @@ const COMPONENTS = [
   BlogEntrySmallComponent,
   BlogAuthorCardComponent,
   ShareLinksComponent,
+  ImageComponent
 ];
 
 @NgModule({

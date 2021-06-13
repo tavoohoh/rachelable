@@ -39,9 +39,8 @@ export class BlogEntryComponent extends BlogPageClass {
   async onInit(): Promise<void> {
     this.route.params.subscribe(async params => {
       if (params.id) {
-        // loading true
+        window.scroll(0, 0);
         await this.initEntityData(params.id);
-        // loading false
       }
     });
   }

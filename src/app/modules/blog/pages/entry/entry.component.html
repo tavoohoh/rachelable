@@ -25,7 +25,7 @@
 
     <div #contentMarker></div>
 
-    <img class="blog-entry-page-content-cover" *ngIf="entry.image" [src]="entry.image" [alt]="entry.title">
+    <ray-img class="blog-entry-page-content-cover" *ngIf="entry.image" [src]="entry.image" [alt]="entry.title"></ray-img>
 
     <div class="entry-inner-html" [innerHTML]="entry.content"></div>
 

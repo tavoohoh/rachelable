@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {
   CdkDragDrop,
-  CdkDragStart,
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
@@ -39,12 +38,6 @@ export class BlogMainComponent extends BlogPageClass {
 
   public checkIsLast(i: number, list: BlogEntryModel[]): boolean {
     return i === list.length - 1;
-  }
-
-  public handleDragStarted(): void {
-    this.disableEvents = true;
-
-    console.log('disableEvents', this.disableEvents);
   }
 
   public handleDrop(

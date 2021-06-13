@@ -21,7 +21,7 @@ $avatarSize: 24px;
     width: calc(100% + 24px);
     margin: -12px -12px 12px;
 
-    img {
+    ray-img ::ng-deep img {
       object-fit: cover;
       width: 100%;
     }

@@ -4,14 +4,19 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import yaml from 'js-yaml';
 import { environment } from '../../environments/environment';
+import { LoaderService } from '@ser/loader.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContentService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private loader: LoaderService
+  ) {}
 
   public get(contextPath: string): Observable<{ [key: string]: any }> {
+    this.loader.add();
     const url = `${environment.urls.content}${contextPath}?alt=media&token=`;
     const options: object = {
       responseType: 'application/x-yaml',
@@ -23,6 +28,7 @@ export class ContentService {
 
         yaml.loadAll(data, (doc) => list.push(doc));
 
+        this.loader.remove();
         return {
           ...list[0],
           content: list[1],

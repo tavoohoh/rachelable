@@ -1,6 +1,6 @@
 <div class="blog-entry-small" [class.is-first]="isFirst" [class.is-last]="isLast" [class.is-extra-small]="isExtraSmall" routerLink="/blog/{{ context?.id }}">
   <div class="blog-entry-small-image" *ngIf="showImage && context.image">
-    <img [src]="context.image" [alt]="">
+    <ray-img [src]="context.image" [alt]=""></ray-img>
   </div>
 
   <div class="blog-entry-small-title">

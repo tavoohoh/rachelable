@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '@app/app.service';
+import { LoaderService } from '@ser/loader.service';
 
 @Component({
   selector: 'ray-root',
   template: `
     <ray-loader *ngIf="showLoader"></ray-loader>
-    <div class="main" *ngIf="!loading">
+    <div class="main" *ngIf="contentIsReady">
       <router-outlet></router-outlet>
       <ray-footer></ray-footer>
     </div>
@@ -13,15 +14,20 @@ import { AppService } from '@app/app.service';
   styles: [],
 })
 export class AppComponent implements OnInit {
-  public loading = true;
+  public contentIsReady = false;
   public showLoader = true;
 
-  constructor(private service: AppService) {}
+  constructor(
+    private service: AppService,
+    private loader: LoaderService
+  ) {}
 
   async ngOnInit(): Promise<void> {
-    await this.service.initApp();
-    this.loading = false;
+    this.loader.asObservable().subscribe(value => {
+      this.showLoader = value;
+    });
 
-    setTimeout(() => (this.showLoader = false), 1300);
+    await this.service.initApp();
+    this.contentIsReady = true;
   }
 }
