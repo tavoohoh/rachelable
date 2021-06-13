@@ -1,9 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {
+  CdkDragDrop,
+  CdkDragStart,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
+
 import { MetaDataService } from '@ser/metatag.service';
-import { PageName } from '@mod/meta-data.model';
 import { BlogService } from '@ser/blog.service';
-import { BlogEntriesProgress, BlogModel } from '@mod/db/blog.model';
+import { PageName } from '@mod/meta-data.model';
+import { BlogEntriesProgress, BlogEntryModel } from '@mod/db/blog.model';
 import { BlogPageClass } from '@app/classes/blog-page.class';
+import { BlogEntryStatusEnum } from '@enu/blog-entry-status.enum';
 
 @Component({
   selector: 'ray-blog',
@@ -12,6 +20,8 @@ import { BlogPageClass } from '@app/classes/blog-page.class';
 })
 export class BlogMainComponent extends BlogPageClass {
   public entries: BlogEntriesProgress;
+  public entryStatus = BlogEntryStatusEnum;
+  public disableEvents = false;
 
   constructor(
     public service: BlogService,
@@ -25,10 +35,39 @@ export class BlogMainComponent extends BlogPageClass {
   async onInit(): Promise<void> {
     this.context = await this.service.getContext();
     this.entries = this.context.entries;
+  }
 
-    this.entries.inProgress.push(this.entries.toRead[2]);
-    this.entries.inProgress.push(this.entries.toRead[0]);
-    this.entries.done.push(this.entries.toRead[1]);
-    this.entries.done.push(this.entries.toRead[2]);
+  public checkIsLast(i: number, list: BlogEntryModel[]): boolean {
+    return i === list.length - 1;
+  }
+
+  public handleDragStarted(): void {
+    this.disableEvents = true;
+
+    console.log('disableEvents', this.disableEvents);
+  }
+
+  public handleDrop(
+    event: CdkDragDrop<BlogEntryModel[]>,
+    status: BlogEntryStatusEnum
+  ): void {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+
+      event.container.data[0].updateStatus(status);
+    }
+
+    this.disableEvents = false;
   }
 }

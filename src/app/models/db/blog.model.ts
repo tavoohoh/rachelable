@@ -71,11 +71,11 @@ export class BlogEntryModel {
     const localEntries = BlogEntryModel.getLocalEntries();
     const entryIndex = localEntries.findIndex((e) => e.id === this.id);
 
-    if (entryIndex) {
+    if (localEntries[entryIndex]) {
       localEntries[entryIndex].status = status;
     } else {
       localEntries.push({
-        id: this.title,
+        id: this.id,
         status,
       });
     }

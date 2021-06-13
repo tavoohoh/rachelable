@@ -5,6 +5,7 @@ import { BlogMainComponent } from '@app/modules/blog/pages/main/main.component';
 import { ComponentsModule } from '@com/components.module';
 import { RouterModule, Routes } from '@angular/router';
 import { BlogEntryComponent } from '@app/modules/blog/pages/entry/entry.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -19,6 +20,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [BlogMainComponent, BlogEntryComponent],
-  imports: [ComponentsModule, RouterModule.forChild(routes), CommonModule],
+  imports: [
+    ComponentsModule,
+    RouterModule.forChild(routes),
+    CommonModule,
+    DragDropModule,
+  ],
 })
 export class BlogModule {}

@@ -23,3 +23,21 @@
     }
   }
 }
+
+ray-blog-entry-small.disable-events {
+  background-color: red;
+  display: block;
+  height: 100px;
+
+  ::ng-deep * {
+    pointer-events: none;
+    cursor: move;
+  }
+}
+
+.cdk-drag-preview {
+}
+
+.cdk-drag-placeholder {
+  opacity: 1;
+}
