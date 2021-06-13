@@ -13,7 +13,7 @@ import { BlogPageClass } from '@app/classes/blog-page.class';
   styleUrls: ['./entry.component.scss'],
 })
 export class BlogEntryComponent extends BlogPageClass {
-  @ViewChild('blogEntryCover', { static: false }) blogEntryCover: ElementRef;
+  @ViewChild('contentMarker', { static: false }) contentMarker: ElementRef;
 
   private sideContentTop = 0;
   public entry: BlogEntryModel;
@@ -37,7 +37,16 @@ export class BlogEntryComponent extends BlogPageClass {
   }
 
   async onInit(): Promise<void> {
-    const id = this.route.snapshot.paramMap.get('id');
+    this.route.params.subscribe(async params => {
+      if (params.id) {
+        // loading true
+        await this.initEntityData(params.id);
+        // loading false
+      }
+    });
+  }
+
+  private async initEntityData(id: string): Promise<void> {
     const entry = await this.service.getEntry(id).toPromise();
 
     if (!entry) {
@@ -52,31 +61,11 @@ export class BlogEntryComponent extends BlogPageClass {
     );
 
     this.initSideContentTop();
-    this.excludeCurrentEntryFromContext();
-    // loading false
-  }
-
-  private excludeCurrentEntryFromContext(): void {
-    let entryIndex = this.context.entries.toRead.findIndex(
-      (o) => o.id === this.entry.id
-    );
-
-    if (this.context.entries.toRead[entryIndex]) {
-      this.context.entries.toRead.splice(entryIndex, 1);
-    } else {
-      entryIndex = this.context.entries.inProgress.findIndex(
-        (o) => o.id === this.entry.id
-      );
-
-      if (this.context.entries.inProgress[entryIndex]) {
-        this.context.entries.inProgress.splice(entryIndex, 1);
-      }
-    }
   }
 
   private initSideContentTop(): void {
-    if (this.blogEntryCover) {
-      const bound = this.blogEntryCover.nativeElement.getBoundingClientRect();
+    if (this.contentMarker) {
+      const bound = this.contentMarker.nativeElement.getBoundingClientRect();
       this.sideContentTop = bound.top;
     } else {
       setTimeout(() => this.initSideContentTop(), 300);

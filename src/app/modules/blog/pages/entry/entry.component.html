@@ -23,7 +23,9 @@
       [date]="entry.date"
       [estimatedReadTime]="entry.estimatedReadTime()"></ray-blog-author-card>
 
-    <img class="blog-entry-page-content-cover" *ngIf="entry.image" [src]="entry.image" [alt]="entry.title" #blogEntryCover>
+    <div #contentMarker></div>
+
+    <img class="blog-entry-page-content-cover" *ngIf="entry.image" [src]="entry.image" [alt]="entry.title">
 
     <div class="entry-inner-html" [innerHTML]="entry.content"></div>
 
