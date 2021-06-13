@@ -22,7 +22,8 @@ export class BlogService extends ServiceClass {
     const entries = await this.getEntriesWithProgress(main.blogs);
 
     this.$blogContext.next({
-      main, entries
+      main,
+      entries,
     });
   }
 
