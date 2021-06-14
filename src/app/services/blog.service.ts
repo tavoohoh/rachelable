@@ -43,7 +43,7 @@ export class BlogService extends ServiceClass {
     newStatus: BlogEntryStatusEnum
   ): void {
     const value = this.$blogContext.value;
-    const entryIndex = value.entries[status].findIndex(o => o.id === id);
+    const entryIndex = value.entries[status].findIndex((o) => o.id === id);
     const entry = value.entries[status][entryIndex];
     value.entries[status][entryIndex].status = status;
     value.entries[status].splice(entryIndex, 1);

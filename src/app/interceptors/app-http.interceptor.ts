@@ -3,7 +3,8 @@ import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpRequest, HttpResponse,
+  HttpRequest,
+  HttpResponse,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -11,7 +12,6 @@ import { LoaderService } from '@ser/loader.service';
 
 @Injectable()
 export class AppHttpInterceptor implements HttpInterceptor {
-
   constructor(private loader: LoaderService) {}
 
   intercept(
@@ -26,7 +26,8 @@ export class AppHttpInterceptor implements HttpInterceptor {
           if (event instanceof HttpResponse) {
             this.loader.remove();
           }
-        }, () => this.loader.remove()
+        },
+        () => this.loader.remove()
       )
     );
   }

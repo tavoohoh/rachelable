@@ -17,7 +17,7 @@ const COMPONENTS = [
   BlogEntrySmallComponent,
   BlogAuthorCardComponent,
   ShareLinksComponent,
-  ImageComponent
+  ImageComponent,
 ];
 
 @NgModule({

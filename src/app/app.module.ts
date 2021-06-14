@@ -8,9 +8,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ComponentsModule } from '@com/components.module';
-import {
-  AppHttpInterceptor
-} from '@app/interceptors/app-http.interceptor';
+import { AppHttpInterceptor } from '@app/interceptors/app-http.interceptor';
 
 const routes: Routes = [
   {

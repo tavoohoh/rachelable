@@ -62,11 +62,7 @@ export class BlogEntryComponent extends BlogPageClass {
         status = BlogEntryStatusEnum.DONE;
       }
 
-      this.service.updateEntryStatus(
-        this.entry.id,
-        this.entry.status,
-        status
-      );
+      this.service.updateEntryStatus(this.entry.id, this.entry.status, status);
       this.entry.updateStatus(status);
 
       return true;
@@ -76,7 +72,7 @@ export class BlogEntryComponent extends BlogPageClass {
   }
 
   async onInit(): Promise<void> {
-    this.route.params.subscribe(async params => {
+    this.route.params.subscribe(async (params) => {
       if (params.id) {
         window.scroll(0, 0);
         await this.initEntityData(params.id);
@@ -117,18 +113,19 @@ export class BlogEntryComponent extends BlogPageClass {
     entryProgressType: BlogEntryStatusEnum,
     entryIndex: number
   ): boolean {
-    return this.context.entries[
-      entryProgressType
-    ][entryIndex].id !== this.entry.id;
+    return (
+      this.context.entries[entryProgressType][entryIndex].id !== this.entry.id
+    );
   }
 
   public showSideContentProgress(
     entryProgressType: BlogEntryStatusEnum
   ): boolean {
-
     if (this.context.entries[entryProgressType].length === 1) {
-      return this.context.entries[entryProgressType].length === 1
-        && this.showSideContentEntry(entryProgressType, 0);
+      return (
+        this.context.entries[entryProgressType].length === 1 &&
+        this.showSideContentEntry(entryProgressType, 0)
+      );
     }
 
     return this.context.entries[entryProgressType].length > 0;

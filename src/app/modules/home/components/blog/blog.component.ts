@@ -18,7 +18,7 @@ export class BlogHomeComponent extends BlogPageClass {
     const entries = [
       ...this.context.entries[BlogEntryStatusEnum.TO_READ],
       ...this.context.entries[BlogEntryStatusEnum.IN_PROGRESS],
-      ...this.context.entries[BlogEntryStatusEnum.DONE]
+      ...this.context.entries[BlogEntryStatusEnum.DONE],
     ];
 
     this.lastEntry = entries[0];

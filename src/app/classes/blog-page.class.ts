@@ -6,9 +6,7 @@ import { BlogService } from '@ser/blog.service';
 export class BlogPageClass implements OnInit {
   public context: BlogContext;
 
-  constructor(
-    public service: BlogService
-  ) {}
+  constructor(public service: BlogService) {}
 
   async ngOnInit(): Promise<void> {
     await this.getContext();

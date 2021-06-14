@@ -3,15 +3,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoaderService {
   private $loading = new BehaviorSubject<number[]>([]);
 
   public asObservable(): Observable<boolean> {
-    return this.$loading.asObservable().pipe(map((value => {
-      return value.length > 0;
-    })));
+    return this.$loading.asObservable().pipe(
+      map((value) => {
+        return value.length > 0;
+      })
+    );
   }
 
   public get(): boolean {

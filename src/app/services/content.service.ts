@@ -10,10 +10,7 @@ import { LoaderService } from '@ser/loader.service';
   providedIn: 'root',
 })
 export class ContentService {
-  constructor(
-    private http: HttpClient,
-    private loader: LoaderService
-  ) {}
+  constructor(private http: HttpClient, private loader: LoaderService) {}
 
   public get(contextPath: string): Observable<{ [key: string]: any }> {
     this.loader.add();

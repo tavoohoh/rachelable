@@ -17,13 +17,10 @@ export class AppComponent implements OnInit {
   public contentIsReady = false;
   public showLoader = true;
 
-  constructor(
-    private service: AppService,
-    private loader: LoaderService
-  ) {}
+  constructor(private service: AppService, private loader: LoaderService) {}
 
   async ngOnInit(): Promise<void> {
-    this.loader.asObservable().subscribe(value => {
+    this.loader.asObservable().subscribe((value) => {
       this.showLoader = value;
     });
 

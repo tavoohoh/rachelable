@@ -1,13 +1,8 @@
-import {
-  Component,
-  ElementRef,
-  Input,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'ray-img',
-  template: `<img #img [src]="src" [alt]="alt ? alt : ''">`
+  template: `<img #img [src]="src" [alt]="alt ? alt : ''" />`,
 })
 export class ImageComponent {
   @ViewChild('img', { static: false }) img: ElementRef;
