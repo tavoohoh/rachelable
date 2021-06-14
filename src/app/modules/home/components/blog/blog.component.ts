@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BlogEntryModel } from '@mod/db/blog.model';
 import { BlogPageClass } from '@app/classes/blog-page.class';
+import { BlogEntryStatusEnum } from '@enu/blog-entry-status.enum';
 
 @Component({
   selector: 'ray-home-blog',
@@ -15,9 +16,9 @@ export class BlogHomeComponent extends BlogPageClass {
     this.context = await this.service.getContext();
 
     const entries = [
-      ...this.context.entries.toRead,
-      ...this.context.entries.inProgress,
-      ...this.context.entries.done
+      ...this.context.entries[BlogEntryStatusEnum.TO_READ],
+      ...this.context.entries[BlogEntryStatusEnum.IN_PROGRESS],
+      ...this.context.entries[BlogEntryStatusEnum.DONE]
     ];
 
     this.lastEntry = entries[0];

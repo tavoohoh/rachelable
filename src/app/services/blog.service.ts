@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ServiceClass } from '@app/classes/service.class';
-import { BasicInfoModel } from '@mod/db/basic-info.model';
 import {
   BlogContext,
   BlogEntriesProgress,
@@ -36,6 +35,21 @@ export class BlogService extends ServiceClass {
     }
 
     return this.$blogContext.value;
+  }
+
+  public updateEntryStatus(
+    id: string,
+    status: BlogEntryStatusEnum,
+    newStatus: BlogEntryStatusEnum
+  ): void {
+    const value = this.$blogContext.value;
+    const entryIndex = value.entries[status].findIndex(o => o.id === id);
+    const entry = value.entries[status][entryIndex];
+    value.entries[status][entryIndex].status = status;
+    value.entries[status].splice(entryIndex, 1);
+    value.entries[newStatus].push(entry);
+
+    this.$blogContext.next(value);
   }
 
   public getEntry(url: string): Observable<BlogEntryModel> {
@@ -80,9 +94,9 @@ export class BlogService extends ServiceClass {
     links: string[]
   ): Promise<BlogEntriesProgress> {
     const entries: BlogEntriesProgress = {
-      toRead: [],
-      inProgress: [],
-      done: [],
+      [BlogEntryStatusEnum.TO_READ]: [],
+      [BlogEntryStatusEnum.IN_PROGRESS]: [],
+      [BlogEntryStatusEnum.DONE]: [],
     };
 
     await Promise.all(
@@ -92,13 +106,13 @@ export class BlogService extends ServiceClass {
 
         switch (entry.status) {
           case BlogEntryStatusEnum.TO_READ:
-            entries.toRead.push(entry);
+            entries[BlogEntryStatusEnum.TO_READ].push(entry);
             break;
           case BlogEntryStatusEnum.IN_PROGRESS:
-            entries.inProgress.push(entry);
+            entries[BlogEntryStatusEnum.IN_PROGRESS].push(entry);
             break;
           case BlogEntryStatusEnum.DONE:
-            entries.done.push(entry);
+            entries[BlogEntryStatusEnum.DONE].push(entry);
             break;
         }
       })

@@ -4,28 +4,28 @@
   <ray-blog-header *ngIf="context" [headerTitle]="context.main.title" [headerDescription]="context.main.description"></ray-blog-header>
 
   <div cdkDropListGroup class="blog-page-entries" *ngIf="entries">
-    <div class="blog-page-entries-list" cdkDropList [cdkDropListData]="entries.toRead" (cdkDropListDropped)="handleDrop($event, entryStatus.TO_READ)">
+    <div class="blog-page-entries-list" cdkDropList [cdkDropListData]="entries[entryStatus.TO_READ]" (cdkDropListDropped)="handleDrop($event, entryStatus.TO_READ)">
       <h4>To Read</h4>
-      <ray-blog-entry-small cdkDrag *ngFor="let entry of entries.toRead; let i = index"
+      <ray-blog-entry-small cdkDrag *ngFor="let entry of entries[entryStatus.TO_READ]; let i = index"
                             [showImage]="true"
                             [context]="entry"
-                            [isLast]="checkIsLast(i, entries.toRead)"></ray-blog-entry-small>
+                            [isLast]="checkIsLast(i, entries[entryStatus.TO_READ])"></ray-blog-entry-small>
     </div>
 
-    <div class="blog-page-entries-list" cdkDropList [cdkDropListData]="entries.inProgress" (cdkDropListDropped)="handleDrop($event, entryStatus.IN_PROGRESS)">
+    <div class="blog-page-entries-list" cdkDropList [cdkDropListData]="entries[entryStatus.IN_PROGRESS]" (cdkDropListDropped)="handleDrop($event, entryStatus.IN_PROGRESS)">
       <h4>In Progress</h4>
-      <ray-blog-entry-small cdkDrag *ngFor="let entry of entries.inProgress; let i = index"
+      <ray-blog-entry-small cdkDrag *ngFor="let entry of entries[entryStatus.IN_PROGRESS]; let i = index"
                             [showImage]="true"
                             [context]="entry"
-                            [isLast]="checkIsLast(i, entries.inProgress)"></ray-blog-entry-small>
+                            [isLast]="checkIsLast(i, entries[entryStatus.IN_PROGRESS])"></ray-blog-entry-small>
     </div>
 
-    <div class="blog-page-entries-list" cdkDropList [cdkDropListData]="entries.done" (cdkDropListDropped)="handleDrop($event, entryStatus.DONE)">
+    <div class="blog-page-entries-list" cdkDropList [cdkDropListData]="entries[entryStatus.DONE]" (cdkDropListDropped)="handleDrop($event, entryStatus.DONE)">
       <h4>Done</h4>
-      <ray-blog-entry-small cdkDrag *ngFor="let entry of entries.done; let i = index"
+      <ray-blog-entry-small cdkDrag *ngFor="let entry of entries[entryStatus.DONE]; let i = index"
                             [showImage]="true"
                             [context]="entry"
-                            [isLast]="checkIsLast(i, entries.done)"></ray-blog-entry-small>
+                            [isLast]="checkIsLast(i, entries[entryStatus.DONE])"></ray-blog-entry-small>
     </div>
   </div>
 </div>

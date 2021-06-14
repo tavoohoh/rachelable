@@ -27,7 +27,11 @@
 
     <ray-img class="blog-entry-page-content-cover" *ngIf="entry.image" [src]="entry.image" [alt]="entry.title"></ray-img>
 
+    <div #startedMarker></div>
+
     <div class="entry-inner-html" [innerHTML]="entry.content"></div>
+
+    <div #endedMarker></div>
 
     <div class="blog-entry-page-content-tags">
       <span *ngFor="let tag of entry.tags">
@@ -41,14 +45,14 @@
   <!-- right column -->
   <div class="blog-entry-page-right" [class.blog-entry-page-opacity]="sideDisplay">
     <div class="blog-entry-page-right-content">
-      <div class="blog-entry-page-right-content-list" *ngIf="showSideContentProgress(blogEntryProgressType.toRead)">
+      <div class="blog-entry-page-right-content-list" *ngIf="showSideContentProgress(blogEntryStatus.TO_READ)">
         <h4>To read</h4>
-        <ng-container *ngTemplateOutlet="sideContentEntryTemplate; context: { type: blogEntryProgressType.toRead }"></ng-container>
+        <ng-container *ngTemplateOutlet="sideContentEntryTemplate; context: { type: blogEntryStatus.TO_READ }"></ng-container>
       </div>
 
-      <div class="blog-entry-page-right-content-list" *ngIf="showSideContentProgress(blogEntryProgressType.inProgress)">
+      <div class="blog-entry-page-right-content-list" *ngIf="showSideContentProgress(blogEntryStatus.IN_PROGRESS)">
         <h4>In Progress</h4>
-          <ng-container *ngTemplateOutlet="sideContentEntryTemplate; context: { type: blogEntryProgressType.inProgress }"></ng-container>
+          <ng-container *ngTemplateOutlet="sideContentEntryTemplate; context: { type: blogEntryStatus.IN_PROGRESS }"></ng-container>
       </div>
     </div>
   </div>

@@ -86,9 +86,9 @@ export class BlogEntryModel {
 }
 
 export class BlogEntriesProgress {
-  [BlogEntryProgressTypeEnum.toRead]: BlogEntryModel[];
-  [BlogEntryProgressTypeEnum.inProgress]: BlogEntryModel[];
-  [BlogEntryProgressTypeEnum.done]: BlogEntryModel[];
+  [BlogEntryStatusEnum.TO_READ]: BlogEntryModel[];
+  [BlogEntryStatusEnum.IN_PROGRESS]: BlogEntryModel[];
+  [BlogEntryStatusEnum.DONE]: BlogEntryModel[];
 }
 
 export class BlogContext {

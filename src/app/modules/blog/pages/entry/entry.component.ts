@@ -6,7 +6,7 @@ import { BlogEntryModel } from '@mod/db/blog.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { BlogPageClass } from '@app/classes/blog-page.class';
-import { BlogEntryProgressTypeEnum } from '@enu/blog-entry-progress-type.enum';
+import { BlogEntryStatusEnum } from '@enu/blog-entry-status.enum';
 
 @Component({
   selector: 'ray-blog',
@@ -15,12 +15,16 @@ import { BlogEntryProgressTypeEnum } from '@enu/blog-entry-progress-type.enum';
 })
 export class BlogEntryComponent extends BlogPageClass {
   @ViewChild('contentMarker', { static: false }) contentMarker: ElementRef;
+  @ViewChild('startedMarker', { static: false }) startedMarker: ElementRef;
+  @ViewChild('endedMarker', { static: false }) endedMarker: ElementRef;
 
   private sideContentTop = 0;
+  private readStarted: boolean;
+  private readEnded: boolean;
   public entry: BlogEntryModel;
   public entryUrl: string;
   public sideDisplay: boolean;
-  public blogEntryProgressType = BlogEntryProgressTypeEnum;
+  public blogEntryStatus = BlogEntryStatusEnum;
 
   constructor(
     public service: BlogService,
@@ -36,6 +40,39 @@ export class BlogEntryComponent extends BlogPageClass {
     if (this.sideContentTop) {
       this.sideDisplay = window.pageYOffset > this.sideContentTop;
     }
+
+    if (!this.readStarted && this.startedMarker) {
+      this.readStarted = this.readMarker(
+        this.startedMarker.nativeElement.getBoundingClientRect().top
+      );
+    }
+
+    if (!this.readEnded && this.endedMarker) {
+      this.readEnded = this.readMarker(
+        this.endedMarker.nativeElement.getBoundingClientRect().bottom
+      );
+    }
+  }
+
+  private readMarker(bound: number): boolean {
+    if (window.pageYOffset > bound) {
+      let status = BlogEntryStatusEnum.IN_PROGRESS;
+
+      if (this.entry.status === BlogEntryStatusEnum.IN_PROGRESS) {
+        status = BlogEntryStatusEnum.DONE;
+      }
+
+      this.service.updateEntryStatus(
+        this.entry.id,
+        this.entry.status,
+        status
+      );
+      this.entry.updateStatus(status);
+
+      return true;
+    }
+
+    return false;
   }
 
   async onInit(): Promise<void> {
@@ -61,6 +98,9 @@ export class BlogEntryComponent extends BlogPageClass {
       this.entry.overview
     );
 
+    this.readStarted = this.entry.status === BlogEntryStatusEnum.IN_PROGRESS;
+    this.readEnded = this.entry.status === BlogEntryStatusEnum.DONE;
+
     this.initSideContentTop();
   }
 
@@ -74,7 +114,7 @@ export class BlogEntryComponent extends BlogPageClass {
   }
 
   public showSideContentEntry(
-    entryProgressType: BlogEntryProgressTypeEnum,
+    entryProgressType: BlogEntryStatusEnum,
     entryIndex: number
   ): boolean {
     return this.context.entries[
@@ -83,7 +123,7 @@ export class BlogEntryComponent extends BlogPageClass {
   }
 
   public showSideContentProgress(
-    entryProgressType: BlogEntryProgressTypeEnum
+    entryProgressType: BlogEntryStatusEnum
   ): boolean {
 
     if (this.context.entries[entryProgressType].length === 1) {
