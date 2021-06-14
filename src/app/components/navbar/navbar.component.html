@@ -1,12 +1,9 @@
+<!-- logo -->
+<a class="logo" [class.inverted-colors]="invertedColors" [routerLink]="links[0].path">
+  <span class="icon-logo"></span>
+</a>
+
 <nav [class.inverted-colors]="invertedColors" [class.open-menu]="openMenu">
-  <!-- logo -->
-  <a class="logo" [routerLink]="links[0].path">
-    <span class="icon-logo"></span>
-  </a>
-
-  <!-- fill middle space -->
-  <span></span>
-
   <!-- url links -->
   <div class="links">
     <a class="link"

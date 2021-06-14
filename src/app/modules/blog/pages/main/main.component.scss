@@ -1,6 +1,6 @@
-.blog-page {
-  padding-top: 200px;
+@import 'variables';
 
+.blog-page {
   &-entries {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -40,4 +40,18 @@ ray-blog-entry-small.disable-events {
 
 .cdk-drag-placeholder {
   opacity: 1;
+}
+
+@media screen and (max-width: $med) {
+  .blog-page {
+    &-entries {
+      margin-top: 32px;
+      grid-template-columns: 1fr;
+
+      &-list {
+        width: 315px;
+        margin: 12px auto;
+      }
+    }
+  }
 }

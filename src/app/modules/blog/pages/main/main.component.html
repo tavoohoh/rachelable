@@ -1,6 +1,6 @@
 <ray-navbar [invertedColors]="true"></ray-navbar>
 
-<div class="container blog-page">
+<div class="container page-container blog-page">
   <ray-blog-header *ngIf="context" [headerTitle]="context.main.title" [headerDescription]="context.main.description"></ray-blog-header>
 
   <div cdkDropListGroup class="blog-page-entries" *ngIf="entries">

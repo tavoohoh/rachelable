@@ -7,3 +7,9 @@
     margin-bottom: $gap3;
   }
 }
+
+@media screen and (max-width: $med) {
+  .blog-header {
+    margin-bottom: 0;
+  }
+}

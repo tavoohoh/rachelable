@@ -128,6 +128,15 @@ p, b, strong, li {
 
   @media screen and (max-width: $med) {
     padding: 30px;
+    min-height: unset;
+  }
+}
+
+.page-container {
+  padding-top: 200px;
+
+  @media screen and (max-width: $med) {
+    padding-top: 80px;
   }
 }
 

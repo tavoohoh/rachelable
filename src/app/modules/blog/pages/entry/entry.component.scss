@@ -1,7 +1,6 @@
 @import 'variables';
 
 .blog-entry-page {
-  padding-top: 200px;
   display: grid;
   grid-template-columns: auto 800px auto;
   min-height: calc(100vh - #{$footerSize});

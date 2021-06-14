@@ -1,43 +1,45 @@
 @import 'variables';
 
-$logo: 64px;
+.logo {
+  position: absolute;
+  top: 46px;
+  left: 64px;
+  display: grid;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  background-color: $light;
+  color: $primary;
+  z-index: 1;
+
+  .icon-logo {
+    align-self: center;
+    text-align: center;
+    font-size: 45px;
+  }
+}
+
+.logo.inverted-colors {
+  background-color: $primary;
+  color: $light;
+}
 
 nav {
   position: absolute;
-  display: grid;
-  grid-template-columns: $logo auto max-content;
-  gap: 22px;
-  padding: $logo;
+  padding: 64px;
   box-sizing: border-box;
   z-index: 1;
   width: 100%;
-
-  .logo,
-  .link {
-    cursor: pointer;
-  }
-
-  .logo {
-    display: grid;
-    height: $logo;
-    width: $logo;
-    border-radius: 50%;
-    background-color: $light;
-    color: $primary;
-
-    .icon-logo {
-      align-self: center;
-      text-align: center;
-      font-size: 45px;
-    }
-  }
 
   .links {
     display: grid;
     grid-template-columns: repeat(4, max-content);
     gap: 22px;
+    margin-left: auto;
+    width: max-content;
 
     .link {
+      cursor: pointer;
       font-size: $menuFontSize;
       text-transform: uppercase;
       font-weight: 700;
@@ -52,11 +54,6 @@ nav {
 }
 
 nav.inverted-colors {
-  .logo {
-    background-color: $primary;
-    color: $light;
-  }
-
   .links .link {
     color: $primary;
   }
@@ -95,6 +92,17 @@ nav.inverted-colors {
 }
 
 @media screen and (max-width: $med) {
+  .logo {
+    top: 30px;
+    left: 30px;
+    height: 32px;
+    width: 32px;
+
+    .icon-logo {
+      font-size: 26px;
+    }
+  }
+
   nav {
     display: none;
     position: fixed;
@@ -116,10 +124,19 @@ nav.inverted-colors {
       position: absolute;
       bottom: calc(30px + 56px + 64px);
       right: 30px;
+
+      .link {
+        color: $light!important;
+      }
     }
   }
 
   .open-menu {
     display: initial;
+
+    .logo {
+      background-color: $light!important;
+      color: $primary!important;
+    }
   }
 }

@@ -46,6 +46,27 @@
   }
 }
 
+@media screen and (max-width: $med) {
+  .blog {
+    grid-template-columns: 1fr;
+
+    ray-blog-header,
+    &-last-entry,
+    &-entries {
+      grid-column: unset;
+      grid-row: unset;
+    }
+
+    &-last-entry {
+      display: none;
+    }
+
+    &-entries {
+      margin: 0 auto;
+    }
+  }
+}
+
 .link-button-icon {
   margin: 40px auto 0;
 }
