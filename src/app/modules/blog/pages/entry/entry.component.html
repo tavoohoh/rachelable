@@ -39,15 +39,25 @@
   <!-- right column -->
   <div class="blog-entry-page-right" [class.blog-entry-page-opacity]="sideDisplay">
     <div class="blog-entry-page-right-content">
-      <div class="blog-entry-page-right-content-list" *ngIf="context.entries.toRead.length > 0">
+      <div class="blog-entry-page-right-content-list" *ngIf="showSideContentProgress(blogEntryProgressType.toRead)">
         <h4>To read</h4>
-        <ray-blog-entry-small *ngFor="let entry of context.entries.toRead; let i = index" [context]="entry" [isFirst]="i === 0" [isLast]="i === context.entries.toRead.length - 1" [isExtraSmall]="true"></ray-blog-entry-small>
+        <ng-container *ngTemplateOutlet="sideContentEntryTemplate; context: { type: blogEntryProgressType.toRead }"></ng-container>
       </div>
 
-      <div class="blog-entry-page-right-content-list" *ngIf="context.entries.inProgress.length > 0">
+      <div class="blog-entry-page-right-content-list" *ngIf="showSideContentProgress(blogEntryProgressType.inProgress)">
         <h4>In Progress</h4>
-        <ray-blog-entry-small *ngFor="let entry of context.entries.inProgress; let i = index" [context]="entry" [isFirst]="i === 0" [isLast]="i === context.entries.toRead.length - 1" [isExtraSmall]="true"></ray-blog-entry-small>
+          <ng-container *ngTemplateOutlet="sideContentEntryTemplate; context: { type: blogEntryProgressType.inProgress }"></ng-container>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #sideContentEntryTemplate let-type="type">
+  <ng-container *ngFor="let e of context.entries[type]; let i = index">
+    <ray-blog-entry-small *ngIf="showSideContentEntry(type, i)"
+                          [context]="e"
+                          [isFirst]="i === 0"
+                          [isLast]="i === context.entries[type].length - 1"
+                          [isExtraSmall]="true"></ray-blog-entry-small>
+  </ng-container>
+</ng-template>

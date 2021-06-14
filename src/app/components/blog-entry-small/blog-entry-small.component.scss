@@ -110,4 +110,8 @@ $avatarSize: 24px;
       display: none;
     }
   }
+
+  &::after {
+    width: 174px;
+  }
 }

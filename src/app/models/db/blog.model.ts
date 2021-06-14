@@ -1,5 +1,6 @@
 import { SectionModel } from './section.model';
 import { BlogEntryStatusEnum } from '@enu/blog-entry-status.enum';
+import { BlogEntryProgressTypeEnum } from '@enu/blog-entry-progress-type.enum';
 
 export interface BlogModel extends SectionModel {
   blogs: string[];
@@ -85,9 +86,9 @@ export class BlogEntryModel {
 }
 
 export class BlogEntriesProgress {
-  toRead: BlogEntryModel[];
-  inProgress: BlogEntryModel[];
-  done: BlogEntryModel[];
+  [BlogEntryProgressTypeEnum.toRead]: BlogEntryModel[];
+  [BlogEntryProgressTypeEnum.inProgress]: BlogEntryModel[];
+  [BlogEntryProgressTypeEnum.done]: BlogEntryModel[];
 }
 
 export class BlogContext {

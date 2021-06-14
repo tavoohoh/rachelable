@@ -6,6 +6,7 @@ import { BlogEntryModel } from '@mod/db/blog.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../../../environments/environment';
 import { BlogPageClass } from '@app/classes/blog-page.class';
+import { BlogEntryProgressTypeEnum } from '@enu/blog-entry-progress-type.enum';
 
 @Component({
   selector: 'ray-blog',
@@ -19,6 +20,7 @@ export class BlogEntryComponent extends BlogPageClass {
   public entry: BlogEntryModel;
   public entryUrl: string;
   public sideDisplay: boolean;
+  public blogEntryProgressType = BlogEntryProgressTypeEnum;
 
   constructor(
     public service: BlogService,
@@ -69,5 +71,26 @@ export class BlogEntryComponent extends BlogPageClass {
     } else {
       setTimeout(() => this.initSideContentTop(), 300);
     }
+  }
+
+  public showSideContentEntry(
+    entryProgressType: BlogEntryProgressTypeEnum,
+    entryIndex: number
+  ): boolean {
+    return this.context.entries[
+      entryProgressType
+    ][entryIndex].id !== this.entry.id;
+  }
+
+  public showSideContentProgress(
+    entryProgressType: BlogEntryProgressTypeEnum
+  ): boolean {
+
+    if (this.context.entries[entryProgressType].length === 1) {
+      return this.context.entries[entryProgressType].length === 1
+        && this.showSideContentEntry(entryProgressType, 0);
+    }
+
+    return this.context.entries[entryProgressType].length > 0;
   }
 }
