@@ -115,3 +115,10 @@ $avatarSize: 24px;
     width: 174px;
   }
 }
+
+@media screen and (max-width: $med) {
+  .blog-entry-small,
+  .blog-entry-small.is-extra-small {
+    width: 100%;
+  }
+}

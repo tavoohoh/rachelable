@@ -7,10 +7,6 @@
   margin: 0 auto;
   gap: $gap3;
 
-  @media screen and (max-width: $med) {
-    padding: 110px 30px 30px;
-  }
-
   &-right,
   &-left {
     position: relative;
@@ -63,15 +59,17 @@
 
     &-tags {
       display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: $gap2 0;
 
       span {
         background-color: $border;
         padding: 8px 12px;
         font-size: 1rem;
         margin-right: $gap4;
+        margin-bottom: 10px;
       }
-
-      margin: $gap2 0;
     }
   }
 
@@ -98,4 +96,77 @@
 
 .blog-entry-page-opacity {
   opacity: 1;
+}
+
+@media screen and (min-width: 1252px) {
+  .med-hidden {
+    display: none!important;
+  }
+}
+
+@media screen and (max-width: 1252px) {
+  .blog-entry-page {
+    grid-template-columns: 1fr;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    &-content {
+      padding: 0;
+    }
+
+    &-left {
+      display: none;
+    }
+
+    &-right {
+      opacity: 1;
+      display: block;
+
+      &-content {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $gap3;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $med) {
+  .blog-entry-page {
+    padding: 110px 30px 30px;
+
+    &-content {
+      &-tags {
+        margin: $gap4 0;
+
+        span {
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    &-right {
+      margin: 0 auto;
+
+      &-content {
+        display: block;
+      }
+    }
+  }
+
+  .entry-inner-html ::ng-deep {
+    margin: $gap4 0;
+    font-size: 0.9rem;
+
+    h1, h2 {
+      font-size: 1rem;
+      margin: 12px 0;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      margin: 12px 0;
+    }
+  }
 }
